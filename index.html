@@ -85,12 +85,7 @@
             border-top-color: var(--accent-blue);
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-
-        .preloader-logo {
-            max-width: 300px; /* Increased size */
-            animation: pulse 1.5s ease-in-out infinite;
+            margin: 0 auto 20px;
         }
 
         .loader-text {
@@ -132,17 +127,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .navbar-logo {
-            height: 55px; /* Increased size */
-            width: auto;
-            object-fit: contain;
-            transition: var(--transition);
-        }
-        
-        .navbar.scrolled .navbar-logo {
-            height: 45px; /* Increased size */
         }
 
         .logo-animation {
@@ -620,15 +604,6 @@
             opacity: 0.9;
         }
 
-        .about-content .about-logo {
-            width: 300px;  /* Increased size */
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px; 
-            margin-bottom: 2rem; 
-            box-shadow: var(--shadow-md);
-        }
-
         .ceo-quote {
             background: var(--gradient-3);
             padding: 2rem;
@@ -843,18 +818,19 @@
 
         /* Why Rayyan Section */
         .why-rayyan {
-            background: #f8f9fa; /* Forcing light background */
+            background: var(--gradient-1);
+            color: var(--text-light);
         }
 
         .why-rayyan .section-title {
-            color: var(--primary-dark);
+            color: var(--light-blue);
         }
         .why-rayyan .section-desc {
-            color: var(--text-dark);
+            color: var(--light-blue);
         }
 
         .why-rayyan .title-word:nth-child(2) {
-            color: var(--secondary-dark);
+            color: var(--accent-blue);
         }
 
         .why-rayyan-grid {
@@ -864,23 +840,24 @@
         }
 
         .why-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             padding: 2.5rem;
             border-radius: 20px;
+            border: 1px solid rgba(157, 178, 191, 0.3);
             transition: var(--transition);
-            box-shadow: var(--shadow-sm);
         }
         .why-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .why-card h3 {
-            color: var(--primary-dark);
+            color: var(--light-blue);
             margin-bottom: 1rem;
         }
         .why-card p {
-            color: var(--text-dark);
+            color: var(--text-light);
             opacity: 0.9;
         }
 
@@ -995,7 +972,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1rem;
-            align-items: center;
         }
         #partners .partner-logo-item {
             background: var(--gradient-3);
@@ -1011,14 +987,6 @@
         #partners .partner-logo-item:hover {
             transform: scale(1.05);
             box-shadow: var(--shadow-sm);
-        }
-
-        #partners .partner-logo-img {
-            width: 100%;
-            max-width: 180px; /* Increased size */
-            height: auto;
-            margin: 0 auto;
-            border-radius: 10px;
         }
 
         /* Investors Section */
@@ -1289,13 +1257,6 @@
             border-bottom: 1px solid rgba(157, 178, 191, 0.2);
         }
         
-        .footer-logo {
-            height: 60px; /* Increased size */
-            width: auto;
-            object-fit: contain;
-            margin-bottom: 1rem;
-        }
-
         .footer-brand h3 {
             color: var(--light-blue);
             font-size: 2rem;
@@ -1551,15 +1512,18 @@
 <body>
     <div class="preloader" id="preloader">
         <div class="loader-container">
-            <img src="Images/Rayyan Resources (Logo) (White).png" alt="Rayyan Resources Logo" class="preloader-logo">
             <div class="loader-ring"></div>
+            <div class="loader-text">RAYYAN</div>
         </div>
     </div>
 
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#home" class="nav-brand" style="text-decoration: none;">
-                <img src="Images/Rayyan Resources (Logo) (White).png" alt="Rayyan Resources Logo" class="navbar-logo">
+                <div class="logo-animation">
+                    <span class="logo-text">RAYYAN</span>
+                    <span class="logo-subtext">RESOURCES</span>
+                </div>
             </a>
             <div class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link active">Home</a>
@@ -1673,7 +1637,6 @@
             
             <div class="about-grid">
                 <div class="about-content">
-                    <img src="Images/Rayyan Resources (Logo) (White&Blue) 3 of 3.png" alt="Rayyan Resources" class="about-logo">
                     <p class="lead-text">
                         Rayyan Resources is a next-generation mineral exploration and mining services company committed to unlocking the geological potential of Saudi Arabia and frontier markets.
                     </p>
@@ -2163,7 +2126,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="Images/Rayyan Resources (Logo) (White).png" alt="Rayyan Resources Logo" class="footer-logo">
+                    <h3>RAYYAN RESOURCES</h3>
                     <p>Unlocking value from discovery to decision. Your trusted platform for modern mineral exploration across Saudi Arabia and beyond.</p>
                     <div class="social-links">
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
