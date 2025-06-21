@@ -818,19 +818,18 @@
 
         /* Why Rayyan Section */
         .why-rayyan {
-            background: var(--gradient-1);
-            color: var(--text-light);
+            background: #f8f9fa; /* Forcing light background */
         }
 
         .why-rayyan .section-title {
-            color: var(--light-blue);
+            color: var(--primary-dark);
         }
         .why-rayyan .section-desc {
-            color: var(--light-blue);
+            color: var(--text-dark);
         }
 
         .why-rayyan .title-word:nth-child(2) {
-            color: var(--accent-blue);
+            color: var(--secondary-dark);
         }
 
         .why-rayyan-grid {
@@ -840,24 +839,23 @@
         }
 
         .why-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: white;
             padding: 2.5rem;
             border-radius: 20px;
-            border: 1px solid rgba(157, 178, 191, 0.3);
             transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
         .why-card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-md);
         }
 
         .why-card h3 {
-            color: var(--light-blue);
+            color: var(--primary-dark);
             margin-bottom: 1rem;
         }
         .why-card p {
-            color: var(--text-light);
+            color: var(--text-dark);
             opacity: 0.9;
         }
 
