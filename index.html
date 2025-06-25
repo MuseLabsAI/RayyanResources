@@ -1283,15 +1283,16 @@
         }
 
         .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .contact-info {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
+            max-width: 800px;
         }
 
         .info-card {
@@ -2325,31 +2326,6 @@
                         <h4>Email Us</h4>
                         <p><a href="mailto:info@rayyanresources.com">info@rayyanresources.com</a></p>
                     </div>
-                </div>
-
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <span class="form-line"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
-                            <span class="form-line"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="subject" placeholder="Subject" required>
-                            <span class="form-line"></span>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                            <span class="form-line"></span>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>
