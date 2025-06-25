@@ -303,7 +303,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, rgba(39, 55, 77, 0.9) 0%, rgba(82, 109, 178, 0.8) 100%), url('site-images/hero-background.png') center/cover;
             padding-bottom: 80px;
         }
 
@@ -776,6 +776,30 @@
             flex-direction: column;
         }
 
+        .service-card-with-image {
+            padding: 0;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+            background-color: var(--light-blue);
+            transition: var(--transition);
+        }
+
+        .service-image:hover {
+            transform: scale(1.02);
+        }
+
+        .service-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
         .service-card::before {
             content: '';
             position: absolute;
@@ -912,6 +936,71 @@
             box-shadow: var(--shadow-md);
             transition: var(--transition);
             position: relative;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center 25%;
+        }
+
+        /* Image Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(39, 55, 77, 0.9));
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
 
         .project-card::before {
@@ -1437,6 +1526,14 @@
                 grid-template-columns: 1fr;
             }
             
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            
+            .service-image, .project-image, .gallery-image {
+                height: 200px;
+            }
+            
             .mega-menu {
                 width: 90vw; 
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1558,13 +1655,25 @@
             .contact-info {
                 grid-template-columns: 1fr;
             }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-image, .project-image, .gallery-image {
+                height: 180px;
+            }
+            
+            .service-content {
+                padding: 1.5rem;
+            }
         } 
     </style>
 </head>
 <body>
     <div class="preloader" id="preloader">
         <div class="loader-container">
-            <img src="Images/Rayyan Resources (Logo) (White).png" alt="Rayyan Resources Logo" class="preloader-logo">
+            <img src="site-images/logo-white.png" alt="Rayyan Resources Logo" class="preloader-logo">
             <div class="loader-ring"></div>
         </div>
     </div>
@@ -1572,7 +1681,7 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#home" class="nav-brand" style="text-decoration: none;">
-                <img src="Images/Rayyan Resources (Logo) (White).png" alt="Rayyan Resources Logo" class="navbar-logo">
+                <img src="site-images/logo-white.png" alt="Rayyan Resources Logo" class="navbar-logo">
             </a>
             <div class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link active">Home</a>
@@ -1686,7 +1795,7 @@
             
             <div class="about-grid">
                 <div class="about-content">
-                    <img src="Images/Rayyan Resources (Logo) (White&Blue) 3 of 3.png" alt="Rayyan Resources" class="about-logo">
+                    <img src="site-images/logo-white-blue.png" alt="Rayyan Resources" class="about-logo">
                     <p class="lead-text">
                         Rayyan Resources is a next-generation mineral exploration and mining services company committed to unlocking the geological potential of Saudi Arabia and frontier markets.
                     </p>
@@ -1767,40 +1876,61 @@
             </div>
 
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-map-marked-alt"></i></div>
-                    <h4>Geological Mapping & Exploration</h4>
-                    <p>Regional and detailed geological surveys (1:100k to 1:5,000), alteration/structural mapping, and target generation via QGIS/QField platforms.</p>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-geological-mapping.jpg" alt="Geological Mapping" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <h4>Geological Mapping & Exploration</h4>
+                        <p>Regional and detailed geological surveys (1:100k to 1:5,000), alteration/structural mapping, and target generation via QGIS/QField platforms.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-satellite"></i></div>
-                    <h4>Remote Sensing & GIS Analysis</h4>
-                    <p>Satellite-based mineral targeting (ASTER, Sentinel), landform interpretation, and 3D terrain modeling for risk and access planning.</p>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-remote-sensing.jpg" alt="Remote Sensing" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-satellite"></i></div>
+                        <h4>Remote Sensing & GIS Analysis</h4>
+                        <p>Satellite-based mineral targeting (ASTER, Sentinel), landform interpretation, and 3D terrain modeling for risk and access planning.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-broadcast-tower"></i></div>
-                    <h4>Geophysical Surveys</h4>
-                    <p>Ground magnetic, IP/Resistivity, VLF, gravity, radiometric, and borehole surveys with full data acquisition, processing, and interpretation.</p>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-geophysical-surveys.jpg" alt="Geophysical Surveys" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-broadcast-tower"></i></div>
+                        <h4>Geophysical Surveys</h4>
+                        <p>Ground magnetic, IP/Resistivity, VLF, gravity, radiometric, and borehole surveys with full data acquisition, processing, and interpretation.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-tools"></i></div>
-                    <h4>Drilling & Core Management</h4>
-                    <p>Supervision of RC, Diamond, Air Core, and Auger drilling. Includes planning, core management, QA/QC, and partner coordination.</p>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-drilling-operations.jpg" alt="Drilling Operations" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-tools"></i></div>
+                        <h4>Drilling & Core Management</h4>
+                        <p>Supervision of RC, Diamond, Air Core, and Auger drilling. Includes planning, core management, QA/QC, and partner coordination.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-vials"></i></div>
-                    <h4>Geochemical Sampling & Assay</h4>
-                    <p>Rock chip, soil, and sediment sampling programs with sample tracking and management through accredited laboratory partnerships.</p>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-geochemical-sampling.jpg" alt="Geochemical Sampling" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-vials"></i></div>
+                        <h4>Geochemical Sampling & Assay</h4>
+                        <p>Rock chip, soil, and sediment sampling programs with sample tracking and management through accredited laboratory partnerships.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-cubes"></i></div>
-                    <h4>Resource Estimation & Modeling</h4>
-                    <p>JORC/NI 43-101 compliant geological/grade modeling, 3D block modeling, variography, and resource estimation using Leapfrog & Surpac.</p>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-investment-support.jpg" alt="Investment Support" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Investment Readiness & Support</h4>
+                        <p>JV/licensing support, data room setup for capital raising, ESG alignment, and technical strategy for asset valuation growth.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                    <h4>Investment Readiness & Support</h4>
-                    <p>JV/licensing support, data room setup for capital raising, ESG alignment, and technical strategy for asset valuation growth.</p>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-resource-modeling.jpg" alt="3D Resource Modeling" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-cubes"></i></div>
+                        <h4>Resource Estimation & Modeling</h4>
+                        <p>JORC/NI 43-101 compliant geological/grade modeling, 3D block modeling, variography, and resource estimation using Leapfrog & Surpac.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1854,6 +1984,7 @@
 
             <div class="projects-grid">
                 <div class="project-card">
+                    <img src="site-images/project-umm-hadid.jpg" alt="Umm Hadid Project Site" class="project-image">
                     <div class="project-content">
                         <h3>Umm Hadid Project (Ag–Pb–Zn)</h3>
                         <div class="project-meta">
@@ -1873,6 +2004,7 @@
                 </div>
 
                 <div class="project-card">
+                    <img src="site-images/project-kenz-global-jv.jpg" alt="Kenz Global JV Projects" class="project-image">
                     <div class="project-content">
                         <h3>Kenz Global JV Projects</h3>
                         <div class="project-meta">
@@ -1892,6 +2024,61 @@
                 </div>
 
 
+            </div>
+
+            <!-- Image Gallery Section -->
+            <div class="section-header" style="margin-top: 5rem;">
+                <h2 class="section-title">
+                    <span class="title-word">Our Work</span>
+                    <span class="title-word">in Action</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">Explore our field operations, advanced equipment, and technical expertise across various geological and mining projects.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="site-images/gallery-field-operations.jpg" alt="Field Operations" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h4>Field Operations</h4>
+                        <p>Advanced geological mapping and sampling in challenging terrain conditions</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="site-images/gallery-drilling-operations.jpg" alt="Drilling Operations" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h4>Drilling Operations</h4>
+                        <p>State-of-the-art drilling equipment for core sampling and resource exploration</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="site-images/service-geological-mapping.jpg" alt="Geophysical Surveys" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h4>Geophysical Surveys</h4>
+                        <p>Ground magnetic and electromagnetic surveys for subsurface mapping</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="site-images/gallery-laboratory-analysis.webp" alt="Laboratory Analysis" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h4>Laboratory Analysis</h4>
+                        <p>Precision geochemical analysis and mineral identification</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="site-images/gallery-3d-geological-modeling.png" alt="3D Modeling" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h4>3D Geological Modeling</h4>
+                        <p>Advanced software for resource estimation and geological interpretation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="site-images/service-geophysical-surveys.jpg" alt="Airborne Surveys" class="gallery-image" style="object-position: left center;">
+                    <div class="gallery-overlay">
+                        <h4>Airborne Surveys</h4>
+                        <p>Helicopter-borne geophysical surveys for regional exploration</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2172,7 +2359,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="Images/Rayyan Resources (Logo) (White).png" alt="Rayyan Resources Logo" class="footer-logo">
+                    <img src="site-images/logo-white.png" alt="Rayyan Resources Logo" class="footer-logo">
                     <p>Unlocking value from discovery to decision. Your trusted platform for modern mineral exploration across Saudi Arabia and beyond.</p>
                     <div class="social-links">
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
