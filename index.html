@@ -298,11 +298,13 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
+            height: auto;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
             background: var(--gradient-1);
+            padding-bottom: 80px;
         }
 
         .hero-bg {
@@ -413,22 +415,26 @@
 
         .hero-actions {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             animation: fadeInUp 1s ease 1.4s forwards;
             opacity: 0;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .btn {
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             transition: var(--transition);
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.7rem;
             position: relative;
             overflow: hidden;
+            font-size: 1rem;
+            min-width: 200px;
         }
 
         .btn-primary {
@@ -451,6 +457,12 @@
         .btn-secondary:hover {
             background: var(--accent-blue);
             color: var(--primary-dark);
+        }
+
+        .btn-investor {
+            min-width: 280px;
+            white-space: nowrap;
+            font-size: 0.95rem;
         }
 
         .hero-visual {
@@ -512,11 +524,12 @@
 
         .scroll-indicator {
             position: absolute;
-            bottom: 30px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
             animation: bounce 2s infinite;
+            z-index: 1;
         }
 
         .scroll-indicator span {
@@ -1683,7 +1696,7 @@
                     <p>By combining advanced geoscience, innovative technology, and cross-border expertise, Rayyan Resources positions itself as a platform for long-term exploration value creation, supporting clients from early-stage mapping to mine development and investment readiness.</p>
                     <div class="ceo-quote">
                         <p>"At Rayyan, we believe the future of mining is not just about what you extract — it's about the value you create, the partnerships you build, and the systems you leave behind. Our work is guided by strategy, powered by people, and driven by vision."</p>
-                        <footer>— Nadir Elnour, Founder, CEO, President & Owner</footer>
+
                     </div>
                 </div>
                 
@@ -1878,11 +1891,7 @@
                     </div>
                 </div>
 
-                <div class="project-card project-card-future">
-                    <i class="fas fa-binoculars"></i>
-                    <h3>Future Projects</h3>
-                    <p>Our exploration pipeline is continuously expanding with new licenses and opportunities.</p>
-                </div>
+
             </div>
         </div>
     </section>
@@ -1966,7 +1975,7 @@
                      <div class="invest-card invest-cta">
                         <h3>Request a Pitch Deck</h3>
                         <p>Contact our investment team for our investor deck and data room access.</p>
-                        <a href="mailto:invest@rayyanresources.com" class="btn btn-primary">
+                        <a href="mailto:invest@rayyanresources.com" class="btn btn-primary btn-investor">
                             <span>Contact Investor Relations</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
