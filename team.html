@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Rayyan Resources</title>
+    <meta name="description" content="Meet our experienced leadership team driving innovation and excellence in mineral exploration across the Arabian Shield.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Variables */
+        :root {
+            --primary-dark: #27374D;
+            --secondary-dark: #526DB2;
+            --accent-blue: #9DB2BF;
+            --light-blue: #DDE6ED;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #f8f9fa;
+            --gradient-1: linear-gradient(135deg, #27374D 0%, #526DB2 100%);
+            --gradient-2: linear-gradient(135deg, #526DB2 0%, #9DB2BF 100%);
+            --gradient-3: linear-gradient(135deg, #9DB2BF 0%, #DDE6ED 100%);
+            --shadow-sm: 0 2px 10px rgba(39, 55, 77, 0.1);
+            --shadow-md: 0 5px 20px rgba(39, 55, 77, 0.15);
+            --shadow-lg: 0 10px 40px rgba(39, 55, 77, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--gradient-1);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('site-images/hero-background.png') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-content {
+            color: var(--white);
+        }
+
+        .header-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .header-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--light-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--white);
+            transform: translateX(-5px);
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .team-leadership,
+        .team-field,
+        .team-careers {
+            margin-bottom: 4rem;
+        }
+
+        .team-section-title {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .team-section-desc {
+            color: var(--text-dark);
+            opacity: 0.9;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            text-align: center;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-image img {
+            transform: scale(1.05);
+        }
+
+        .team-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(39, 55, 77, 0.8), rgba(82, 109, 178, 0.8));
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .team-card:hover .team-overlay {
+            opacity: 1;
+        }
+
+        .team-social {
+            display: flex;
+            gap: 1rem;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-social {
+            transform: translateY(0);
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: var(--accent-blue);
+            transform: scale(1.1);
+        }
+
+        .team-info {
+            padding: 2rem;
+        }
+
+        .team-info h3 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .team-position {
+            color: var(--secondary-dark);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .team-bio {
+            color: var(--text-dark);
+            opacity: 0.8;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            height: 40px;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .team-image img {
+                height: 220px;
+            }
+
+            .team-info {
+                padding: 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .team-image img {
+                height: 200px;
+            }
+
+            .team-info {
+                padding: 1rem;
+            }
+
+            .team-info h3 {
+                font-size: 1.1rem;
+            }
+
+            .team-bio {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+                <h1 class="header-title">Our Team & Careers</h1>
+                <p class="header-subtitle">At Rayyan Resources, our foundation is built on trusted leadership, global expertise, and an exceptional on-the-ground team.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="team-leadership">
+                <h3 class="team-section-title">Leadership & Technical Team</h3>
+                <p class="team-section-desc">Our management team brings decades of international and regional experience across exploration, operations, procurement, and finance:</p>
+                
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Nadir.jpg" alt="Nadir Elnour Ahmed Elnour" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Nadir Elnour Ahmed Elnour</h3>
+                            <p class="team-position">Chief Executive Officer</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Dileep.png" alt="Dileep Kappana" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Dileep Kappana</h3>
+                            <p class="team-position">Operations Manager</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Mohammed.png" alt="Mohammed Ameen" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Mohammed Ameen</h3>
+                            <p class="team-position">Accounts Manager</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Jackson.png" alt="Jackson Isac" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Jackson Isac</h3>
+                            <p class="team-position">Procurement Specialist</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Marianne.png" alt="Marianne Joyce Bolos" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Marianne Joyce Bolos</h3>
+                            <p class="team-position">Office Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-field">
+                <h3 class="team-section-title">Our Field Team</h3>
+                <p class="team-section-desc">Our true strength lies in the field. Rayyan has a large and highly skilled field operations team consisting of geologists, geophysicists, surveyors, drill supervisors, and technicians — many of whom have years of experience working across the Arabian Shield. Their work is the engine behind every survey, sample, and successful project we deliver. With teams deployed across active sites, we ensure consistent, high-quality execution even in remote environments.</p>
+            </div>
+
+            <div class="team-careers">
+                <h3 class="team-section-title">Build Your Future in Exploration</h3>
+                <p class="team-section-desc">We're looking for passionate professionals ready to grow with a company in Saudi Arabia's exploration sector. Whether you're starting out or advancing your career, Rayyan offers hands-on experience, strong mentorship, and a collaborative, purpose-driven culture.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="site-images/logo-white.png" alt="Rayyan Resources" class="footer-logo">
+                <p class="footer-text">&copy; 2024 Rayyan Resources. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

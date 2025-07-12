@@ -1,0 +1,3498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayyan Resources - Unlocking Mineral Potential</title>
+    <meta name="description" content="Rayyan Resources is a leading mineral exploration and services company in Saudi Arabia, building high-value opportunities across the Arabian Shield and beyond.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* styles.css content */
+        /* Global Variables - Based on the color palette */
+        :root {
+            --primary-dark: #27374D;
+            --secondary-dark: #526DB2;
+            --accent-blue: #9DB2BF;
+            --light-blue: #DDE6ED;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #f8f9fa;
+            --gradient-1: linear-gradient(135deg, #27374D 0%, #526DB2 100%);
+            --gradient-2: linear-gradient(135deg, #526DB2 0%, #9DB2BF 100%);
+            --gradient-3: linear-gradient(135deg, #9DB2BF 0%, #DDE6ED 100%);
+            --shadow-sm: 0 2px 10px rgba(39, 55, 77, 0.1);
+            --shadow-md: 0 5px 20px rgba(39, 55, 77, 0.15);
+            --shadow-lg: 0 10px 40px rgba(39, 55, 77, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-container {
+            text-align: center;
+        }
+
+        .loader-ring {
+            width: 80px;
+            height: 80px;
+            border: 3px solid var(--light-blue);
+            border-top-color: var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        .preloader-logo {
+            max-width: 300px; /* Increased size */
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .loader-text {
+            color: var(--light-blue);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(39, 55, 77, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 1rem 0;
+        }
+
+        .navbar.scrolled {
+            background: var(--primary-dark);
+            box-shadow: var(--shadow-md);
+            padding: 0.8rem 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            height: 55px; /* Increased size */
+            width: auto;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled .navbar-logo {
+            height: 45px; /* Increased size */
+        }
+
+        .logo-animation {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--light-blue);
+            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .logo-subtext {
+            font-size: 0.8rem;
+            color: var(--accent-blue);
+            letter-spacing: 4px;
+            margin-top: -5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--light-blue);
+        }
+
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--light-blue);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+
+        /* Dropdown Menus */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle i {
+            font-size: 0.7rem;
+            margin-left: 0.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-dropdown:hover .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0; /* Default for simple dropdowns */
+            background: var(--primary-dark);
+            min-width: 220px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px); /* Initial position for slide-in animation */
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            border-radius: 8px;
+            padding: 1rem 0;
+            margin-top: 1rem; /* Spacing from parent nav item */
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0); /* Final position for slide-in animation */
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 0.7rem 1.5rem;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(157, 178, 191, 0.1);
+            color: var(--accent-blue);
+            padding-left: 2rem;
+        }
+
+        /* Mega Menu Specific Styling */
+        .mega-menu {
+            width: 800px;
+            max-width: calc(100vw - 60px); /* Prevent horizontal overflow */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem; /* Override .dropdown-menu padding */
+            
+            /* Centering: Override left:0 from .dropdown-menu and manage combined transform */
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px); /* Centered and initial Y position */
+        }
+        
+        .nav-dropdown:hover .mega-menu {
+            transform: translateX(-50%) translateY(0); /* Centered and final Y position */
+        }
+
+
+        .mega-menu-column h4 {
+            color: var(--accent-blue);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(157, 178, 191, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            height: auto;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(39, 55, 77, 0.9) 0%, rgba(82, 109, 178, 0.8) 100%), url('site-images/hero-background.png') center/cover;
+            padding-bottom: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .particle-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(82, 109, 178, 0.3) 0%, transparent 70%);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding-top: 120px;
+        }
+
+        .hero-content {
+            animation: fadeInLeft 1s ease;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--light-blue);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-title span {
+            display: block;
+            overflow: hidden;
+        }
+
+        .animate-text {
+            display: inline-block;
+            animation: slideInUp 0.8s ease forwards;
+            animation-delay: calc(var(--index) * 0.2s);
+        }
+
+        .hero-title span:nth-child(1) { --index: 0; }
+        .hero-title span:nth-child(2) { --index: 1; }
+        .hero-title span:nth-child(3) { --index: 2; }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-blue);
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease 0.6s forwards;
+            opacity: 0;
+            max-width: 600px;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(157, 178, 191, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            border: 1px solid rgba(157, 178, 191, 0.3);
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+            animation-delay: calc(var(--index) * 0.2s + 0.8s);
+        }
+
+        .feature-item:nth-child(1) { --index: 0; }
+        .feature-item:nth-child(2) { --index: 1; }
+        .feature-item:nth-child(3) { --index: 2; }
+        .feature-item:nth-child(4) { --index: 3; }
+        .feature-item:nth-child(5) { --index: 4; }
+
+        .feature-item i {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+        }
+
+        .feature-item span {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 2rem;
+            animation: fadeInUp 1s ease 1.4s forwards;
+            opacity: 0;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            position: relative;
+            overflow: hidden;
+            font-size: 1rem;
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--light-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light-blue);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-blue);
+            color: var(--primary-dark);
+        }
+
+        .btn-investor {
+            min-width: 280px;
+            white-space: nowrap;
+            font-size: 0.95rem;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .floating-icons {
+            position: relative;
+            height: 400px;
+        }
+
+        .float-icon {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(157, 178, 191, 0.1);
+            border: 2px solid rgba(157, 178, 191, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-icon i {
+            font-size: 2rem;
+            color: var(--accent-blue);
+        }
+
+        .float-icon[data-float="1"] {
+            top: 10%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .float-icon[data-float="2"] {
+            top: 30%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .float-icon[data-float="3"] {
+            bottom: 30%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+
+        .float-icon[data-float="4"] {
+            bottom: 10%;
+            right: 20%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            75% { transform: translateY(20px) rotate(-5deg); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            animation: bounce 2s infinite;
+            z-index: 1;
+        }
+
+        .scroll-indicator span {
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .scroll-arrow {
+            width: 30px;
+            height: 30px;
+            border-right: 2px solid var(--accent-blue);
+            border-bottom: 2px solid var(--accent-blue);
+            transform: rotate(45deg);
+            margin: 0 auto;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .title-word {
+            display: inline-block;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            animation-delay: calc(var(--index) * 0.1s);
+        }
+
+        .title-word:nth-child(1) { --index: 0; }
+        .title-word:nth-child(2) { --index: 1; color: var(--secondary-dark); }
+        .title-word:nth-child(3) { --index: 2; }
+        .title-word:nth-child(4) { --index: 3; color: var(--secondary-dark); }
+
+        .title-underline {
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-2);
+            margin: 0 auto;
+            border-radius: 2px;
+            animation: expandWidth 0.8s ease 0.3s forwards;
+            transform: scaleX(0);
+        }
+
+        @keyframes expandWidth {
+            to { transform: scaleX(1); }
+        }
+
+        .section-desc {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 1rem auto 0;
+            opacity: 0.8;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .lead-text {
+            font-size: 1.3rem;
+            color: var(--secondary-dark);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            opacity: 0.9;
+        }
+
+        .about-content .about-logo {
+            width: 300px;  /* Increased size */
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; 
+            margin-bottom: 2rem; 
+            box-shadow: var(--shadow-md);
+        }
+
+        .ceo-quote {
+            background: var(--gradient-3);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border-left: 5px solid var(--secondary-dark);
+            font-style: italic;
+        }
+
+        .ceo-quote p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .ceo-quote footer {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .about-visual {
+            position: relative;
+        }
+        
+        .about-visual .values-list {
+            list-style: none;
+        }
+
+        .values-list li {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .values-list li:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .values-list i {
+            font-size: 2rem;
+            color: var(--secondary-dark);
+            width: 40px;
+            text-align: center;
+        }
+
+        .values-list strong {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .mv-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-2);
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .mv-icon i {
+            font-size: 2rem;
+            color: var(--secondary-dark);
+        }
+
+        .mv-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .mv-card p {
+            color: var(--text-dark);
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        /* Team Section */
+        .team {
+            background: #f8f9fa; /* Light background for team section */
+        }
+
+        .team .section-title {
+            color: var(--primary-dark);
+        }
+
+        .team .section-desc {
+            color: var(--text-dark);
+        }
+
+        .team .title-word:nth-child(2) {
+            color: var(--secondary-dark);
+        }
+
+        .team-leadership,
+        .team-field,
+        .team-careers {
+            margin-bottom: 4rem;
+        }
+
+        .team-section-title {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .team-section-desc {
+            color: var(--text-dark);
+            opacity: 0.9;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            text-align: center;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-image img {
+            transform: scale(1.05);
+        }
+
+        .team-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(39, 55, 77, 0.8), rgba(82, 109, 178, 0.8));
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .team-card:hover .team-overlay {
+            opacity: 1;
+        }
+
+        .team-social {
+            display: flex;
+            gap: 1rem;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-social {
+            transform: translateY(0);
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: var(--accent-blue);
+            transform: scale(1.1);
+        }
+
+        .team-info {
+            padding: 2rem;
+        }
+
+        .team-info h3 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .team-position {
+            color: var(--secondary-dark);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .team-bio {
+            color: var(--text-dark);
+            opacity: 0.8;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card-with-image {
+            padding: 0;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+            background-color: var(--light-blue);
+            transition: var(--transition);
+        }
+
+        .service-image:hover {
+            transform: scale(1.02);
+        }
+
+        .service-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-3);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .service-icon i {
+            font-size: 2rem;
+            color: var(--secondary-dark);
+        }
+
+        .service-card h4 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--text-dark);
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: auto;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--secondary-dark);
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        /* Why Rayyan Section */
+        .why-rayyan {
+            background: #f8f9fa; /* Forcing light background */
+        }
+
+        .why-rayyan .section-title {
+            color: var(--primary-dark);
+        }
+        .why-rayyan .section-desc {
+            color: var(--text-dark);
+        }
+
+        .why-rayyan .title-word:nth-child(2) {
+            color: var(--secondary-dark);
+        }
+
+        .why-rayyan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        .why-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .why-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+        .why-card p {
+            color: var(--text-dark);
+            opacity: 0.9;
+        }
+
+        /* Certifications Section */
+        .certifications {
+            background: #f8f9fa;
+        }
+
+        .certifications .section-title {
+            color: var(--primary-dark);
+        }
+
+        .certifications .section-desc {
+            color: var(--text-dark);
+        }
+
+        .certifications .title-word:nth-child(2) {
+            color: var(--secondary-dark);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .certification-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .certification-image {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            padding: 1rem;
+        }
+
+        .certification-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .certification-card:hover .certification-image img {
+            transform: scale(1.05);
+        }
+
+        .certification-content {
+            padding: 2rem;
+        }
+
+        .certification-content h3 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .certification-content h4 {
+            color: var(--secondary-dark);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .certification-content p {
+            color: var(--text-dark);
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .certification-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .benefit-item i {
+            color: var(--secondary-dark);
+            font-size: 1rem;
+        }
+
+        .benefit-item i.fa-leaf {
+            color: #16a34a;
+        }
+
+        .benefit-item i.fa-shield-alt {
+            color: #dc2626;
+        }
+
+        .certifications-footer {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+
+        .certifications-statement h3 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .certifications-statement p {
+            color: var(--text-dark);
+            opacity: 0.9;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Projects Section */
+        .projects-overview {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .projects-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .stat-icon i {
+            font-size: 1.5rem;
+            color: var(--secondary-dark);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .projects-summary h3 {
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .projects-summary p {
+            color: var(--text-dark);
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .project-highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .highlight-item h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-item p {
+            color: var(--text-dark);
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge.active {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+        }
+
+        .status-badge.onboarding {
+            background: rgba(245, 158, 11, 0.1);
+            color: #d97706;
+        }
+
+        .status-badge.completed {
+            background: rgba(82, 109, 178, 0.1);
+            color: var(--secondary-dark);
+        }
+
+        .projects-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center 25%;
+        }
+
+        /* Image Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(39, 55, 77, 0.9));
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        .project-card-future {
+            background: var(--gradient-3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        .project-card-future h3 {
+            color: var(--primary-dark);
+        }
+        .project-card-future i {
+            font-size: 3rem;
+            color: var(--secondary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .project-content {
+            padding: 2.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .project-meta {
+            color: var(--secondary-dark);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .project-meta span {
+            margin-right: 1rem;
+        }
+
+        .project-highlights {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .project-highlights li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .project-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-dark);
+        }
+
+        .project-objective {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        /* Partners Section */
+        .partners-marquee {
+            width: 100%;
+            overflow: hidden;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .marquee-content {
+            display: flex;
+            align-items: center;
+            animation: marquee 30s linear infinite;
+            gap: 3rem;
+        }
+
+        .partner-logo {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            min-width: 150px;
+            min-height: 100px;
+        }
+
+        .partner-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .partner-logo img {
+            max-width: 120px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .partner-logo:hover img {
+            filter: grayscale(0%);
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Pause animation on hover */
+        .partners-marquee:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .marquee-content {
+                gap: 2rem;
+            }
+            
+            .partner-logo {
+                min-width: 120px;
+                min-height: 80px;
+                padding: 1rem;
+            }
+            
+            .partner-logo img {
+                max-width: 100px;
+                max-height: 60px;
+            }
+        }
+
+        /* Investors Section */
+        #invest {
+            background: #f8f9fa;
+        }
+        .invest-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        .invest-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+        }
+        .invest-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+        .invest-list {
+            list-style: none;
+        }
+        .invest-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .invest-list li::before {
+            content: '💡';
+            position: absolute;
+            left: 0;
+        }
+
+        .invest-cta .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+
+        /* ESG Section */
+        #esg {
+            background: #27374d;
+            color: white;
+        }
+        
+        #esg .section-title {
+            color: white;
+        }
+        
+        #esg .section-desc {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .vision-logo {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        .vision-logo-img {
+            max-width: 200px;
+            height: auto;
+            opacity: 1;
+        }
+        
+        .esg-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .esg-card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+        
+        .esg-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .esg-card .esg-icon {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        .esg-card h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .esg-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        .esg-card ul {
+            list-style: none;
+            text-align: left;
+        }
+        .esg-card li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .esg-card li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+        
+        @media (max-width: 768px) {
+            .vision-logo-img {
+                max-width: 150px;
+            }
+        }
+
+        /* News Section */
+        #news {
+            background: #f8f9fa;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .news-card .date {
+            font-weight: 600;
+            color: var(--secondary-dark);
+            margin-bottom: 0.5rem;
+        }
+        .news-card h4 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+        
+        /* Team & Careers Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .team-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+        }
+        .team-card h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+        .team-card p {
+            font-style: italic;
+            color: var(--secondary-dark);
+            margin-bottom: 1rem;
+        }
+        .team-card .summary {
+            font-size: 0.9rem;
+        }
+        .careers-cta {
+            background: var(--gradient-3);
+            text-align: center;
+            padding: 3rem;
+            border-radius: 20px;
+            margin-top: 4rem;
+        }
+        .careers-cta h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+        .careers-cta .btn {
+            margin-top: 1rem;
+        }
+
+
+        /* Contact Section */
+        .contact {
+            background: var(--gradient-1);
+            color: var(--text-light);
+        }
+
+        .contact .section-title {
+            color: var(--light-blue);
+        }
+
+        .contact .title-word:nth-child(2) {
+            color: var(--accent-blue);
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .info-card h4 {
+            color: var(--light-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p, .info-card a {
+            color: var(--text-light);
+            opacity: 0.9;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(157, 178, 191, 0.5);
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-bottom-color: var(--accent-blue);
+        }
+
+        .form-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        .form-group input:focus + .form-line,
+        .form-group textarea:focus + .form-line {
+            width: 100%;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: 4rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(157, 178, 191, 0.2);
+        }
+        
+        .footer-logo {
+            height: 60px; /* Increased size */
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand h3 {
+            color: var(--light-blue);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-brand p {
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            max-width: 400px;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            transition: var(--transition);
+        }
+        .social-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-column h4 {
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .footer-column ul li a:hover {
+            opacity: 1;
+            color: var(--light-blue);
+            transform: translateX(5px);
+            display: inline-block;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+        }
+
+        .footer-bottom p {
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-visual {
+                display: none;
+            }
+            .hero-features {
+                justify-content: center;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            
+            .esg-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .invest-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Projects Overview Responsive */
+            .projects-overview {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .projects-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .project-highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            
+            .service-image, .project-image, .gallery-image {
+                height: 200px;
+            }
+            
+            .mega-menu {
+                width: 90vw; 
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                left: 50%;
+                transform: translateX(-50%) translateY(-10px);
+            }
+            .nav-dropdown:hover .mega-menu {
+                 transform: translateX(-50%) translateY(0);
+            }
+            .nav-menu > .nav-dropdown:nth-last-child(-n+2) .mega-menu {
+                left: auto;
+                right: 0;
+                transform: translateX(0) translateY(-10px); 
+            }
+            .nav-dropdown:hover .nav-menu > .nav-dropdown:nth-last-child(-n+2) .mega-menu {
+                transform: translateX(0) translateY(0);
+            }
+            
+            /* Team Section Responsive */
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .team-image img {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px; 
+                flex-direction: column;
+                background: var(--primary-dark);
+                width: 100%;
+                height: calc(100vh - 70px);
+                text-align: left;
+                transition: 0.3s;
+                box-shadow: var(--shadow-lg);
+                padding: 2rem;
+                gap: 1.5rem;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            .nav-toggle.active .hamburger span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .nav-toggle.active .hamburger span:nth-child(2) {
+                opacity: 0;
+            }
+            .nav-toggle.active .hamburger span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-dropdown .dropdown-menu {
+                position: static; 
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: transparent;
+                padding-left: 1rem;
+                margin-top: 0.5rem;
+                display: none;
+                min-width: unset;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+            .nav-dropdown.active .dropdown-menu { 
+                display: block;
+            }
+            .mega-menu {
+                width: 100%;
+                grid-template-columns: 1fr;
+                padding: 1rem 0;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .about-grid, .contact-content, .esg-grid, .mission-vision {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-brand {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            /* Team Section Responsive */
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .team-image img {
+                height: 220px;
+            }
+            
+            .team-info {
+                padding: 1.5rem;
+            }
+            
+            /* Projects Overview Mobile */
+            .projects-overview {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .projects-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .project-highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stat-card {
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            /* Certifications Responsive */
+            .certifications-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .certification-card {
+                margin: 0 auto;
+                max-width: 400px;
+            }
+            
+            .certification-image {
+                height: 150px;
+                padding: 0.5rem;
+            }
+            
+            .certification-content {
+                padding: 1.5rem;
+            }
+            
+            .certifications-footer {
+                padding: 2rem;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-image, .project-image, .gallery-image {
+                height: 180px;
+            }
+            
+            .service-content {
+                padding: 1.5rem;
+            }
+            
+            /* Team Section Responsive */
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .team-image img {
+                height: 200px;
+            }
+            
+            .team-info {
+                padding: 1rem;
+            }
+            
+            .team-info h3 {
+                font-size: 1.1rem;
+            }
+            
+            .team-bio {
+                font-size: 0.85rem;
+            }
+            
+            /* Projects Overview Small Mobile */
+            .projects-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stat-card {
+                padding: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 1.3rem;
+            }
+            
+            .highlight-item {
+                padding: 1rem;
+            }
+            
+            /* Certifications Small Mobile */
+            .certifications-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .certification-card {
+                max-width: 100%;
+            }
+            
+            .certification-image {
+                height: 120px;
+                padding: 0.5rem;
+            }
+            
+            .certification-content {
+                padding: 1rem;
+            }
+            
+            .certification-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .certification-content h4 {
+                font-size: 1rem;
+            }
+            
+            .certification-content p {
+                font-size: 0.9rem;
+            }
+            
+            .benefit-item {
+                font-size: 0.85rem;
+            }
+            
+            .certifications-footer {
+                padding: 1.5rem;
+            }
+            
+            .certifications-statement h3 {
+                font-size: 1.3rem;
+            }
+            
+            .certifications-statement p {
+                font-size: 0.9rem;
+            }
+        } 
+    </style>
+</head>
+<body>
+    <div class="preloader" id="preloader">
+        <div class="loader-container">
+            <img src="site-images/logo-white.png" alt="Rayyan Resources Logo" class="preloader-logo">
+            <div class="loader-ring"></div>
+        </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#home" class="nav-brand" style="text-decoration: none;">
+                <img src="site-images/logo-white.png" alt="Rayyan Resources Logo" class="navbar-logo">
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+
+                <div class="nav-dropdown">
+                    <a href="#about" class="nav-link dropdown-toggle">Company <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#about" class="dropdown-link">About Us</a>
+                        <a href="#team" class="dropdown-link">Our Team</a>
+                        <a href="#careers" class="dropdown-link">Careers</a>
+                        <a href="#partners" class="dropdown-link">Partners</a>
+                        <a href="#news" class="dropdown-link">News & Media</a>
+                    </div>
+                </div>
+                
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="#why-rayyan" class="nav-link">Why Rayyan</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+
+                <div class="nav-dropdown">
+                    <a href="#invest" class="nav-link dropdown-toggle">Investors <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#invest" class="dropdown-link">Why Invest</a>
+                        <a href="#invest" class="dropdown-link">Opportunities</a>
+                        <a href="#esg" class="dropdown-link">ESG & Vision 2030</a>
+                    </div>
+                </div>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-bg">
+            <div class="particle-container"></div>
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="animate-text">Unlocking Mineral</span>
+                    <span class="animate-text">Potential Across the</span>
+                    <span class="animate-text">Arabian Shield</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Rayyan Resources is a leading mineral exploration and mining services company, driving high-value discovery through advanced geoscience, strategic partnerships, and regional expertise. We are not just a service provider — we are building a platform for exploration-led growth.
+                </p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Operating in 5+ Saudi provinces</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>20+ projects supported</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-satellite-dish"></i>
+                        <span>Pioneers in geo-tech integration</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>Global Strategic Partnerships</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Aligned with Vision 2030</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Explore Our Projects</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#why-rayyan" class="btn btn-secondary">
+                        <span>Learn About Our Strategy</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-icons">
+                    <div class="float-icon" data-float="1"><i class="fas fa-gem"></i></div>
+                    <div class="float-icon" data-float="2"><i class="fas fa-mountain"></i></div>
+                    <div class="float-icon" data-float="3"><i class="fas fa-compass"></i></div>
+                    <div class="float-icon" data-float="4"><i class="fas fa-microscope"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </header>
+
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">Who</span>
+                    <span class="title-word">We Are</span>
+                </h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <img src="site-images/logo-white-blue.png" alt="Rayyan Resources" class="about-logo">
+                    <p class="lead-text">
+                        Rayyan Resources is a next-generation mineral exploration and mining services company committed to unlocking the geological potential of Saudi Arabia and frontier markets.
+                    </p>
+                    <p>
+                        Headquartered in the Kingdom, we operate with a strong regional presence and international partnerships across Canada, China, and East Africa. What sets us apart is our strategic focus: <strong>we don't just offer services — we build value.</strong>
+                    </p>
+                    <p>By combining advanced geoscience, innovative technology, and cross-border expertise, Rayyan Resources positions itself as a platform for long-term exploration value creation, supporting clients from early-stage mapping to mine development and investment readiness.</p>
+                    <div class="ceo-quote">
+                        <p>"At Rayyan, we believe the future of mining is not just about what you extract — it's about the value you create, the partnerships you build, and the systems you leave behind. Our work is guided by strategy, powered by people, and driven by vision."</p>
+
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <ul class="values-list">
+                        <li>
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <strong>Integrity</strong> – We act transparently, ethically, and responsibly.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <strong>Excellence</strong> – We uphold international standards like JORC and NI 43-101.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-lightbulb"></i>
+                            <div>
+                                <strong>Innovation</strong> – We adopt the latest exploration technologies to drive discovery.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Partnership</strong> – We collaborate with global institutions to enhance outcomes.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-mountain"></i>
+                            <div>
+                                <strong>Resilience</strong> – We operate successfully in challenging terrains.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mission-vision">
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be the most trusted and scalable mineral exploration and services platform operating across the Arabian Shield and emerging mining regions.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To deliver services that go beyond technical execution—by generating intellectual capital, building strong partnerships, and enabling discovery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">Our Team</span>
+                    <span class="title-word">& Careers</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">At Rayyan Resources, our foundation is built on trusted leadership, global expertise, and an exceptional on-the-ground team.</p>
+            </div>
+
+            <div class="team-leadership">
+                <h3 class="team-section-title">Leadership & Technical Team</h3>
+                <p class="team-section-desc">Our management team brings decades of international and regional experience across exploration, operations, procurement, and finance:</p>
+                
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Nadir.jpg" alt="Nadir Elnour Ahmed Elnour" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Nadir Elnour Ahmed Elnour</h3>
+                            <p class="team-position">Chief Executive Officer</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Dileep.png" alt="Dileep Kappana" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Dileep Kappana</h3>
+                            <p class="team-position">Operations Manager</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Mohammed.png" alt="Mohammed Ameen" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Mohammed Ameen</h3>
+                            <p class="team-position">Accounts Manager</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Jackson.png" alt="Jackson Isac" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Jackson Isac</h3>
+                            <p class="team-position">Procurement Specialist</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Marianne.png" alt="Marianne Joyce Bolos" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Marianne Joyce Bolos</h3>
+                            <p class="team-position">Office Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-field">
+                <h3 class="team-section-title">Our Field Team</h3>
+                <p class="team-section-desc">Our true strength lies in the field. Rayyan has a large and highly skilled field operations team consisting of geologists, geophysicists, surveyors, drill supervisors, and technicians — many of whom have years of experience working across the Arabian Shield. Their work is the engine behind every survey, sample, and successful project we deliver. With teams deployed across active sites, we ensure consistent, high-quality execution even in remote environments.</p>
+            </div>
+
+            <div class="team-careers">
+                <h3 class="team-section-title">Build Your Future in Exploration</h3>
+                <p class="team-section-desc">We're looking for passionate professionals ready to grow with a company in Saudi Arabia's exploration sector. Whether you're starting out or advancing your career, Rayyan offers hands-on experience, strong mentorship, and a collaborative, purpose-driven culture.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">Integrated</span>
+                    <span class="title-word">Services</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">We offer end-to-end exploration and mining services designed to enhance project valuation from the earliest stages to investment readiness.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-geological-mapping.jpg" alt="Geological Mapping" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <h4>Geological Mapping & Exploration</h4>
+                        <p>Regional and detailed geological surveys (1:100k to 1:5,000), alteration/structural mapping, and target generation via QGIS/QField platforms.</p>
+                    </div>
+                </div>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-remote-sensing.jpg" alt="Remote Sensing" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-satellite"></i></div>
+                        <h4>Remote Sensing & GIS Analysis</h4>
+                        <p>Satellite-based mineral targeting (ASTER, Sentinel), landform interpretation, and 3D terrain modeling for risk and access planning.</p>
+                    </div>
+                </div>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-geophysical-surveys.jpg" alt="Geophysical Surveys" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-broadcast-tower"></i></div>
+                        <h4>Geophysical Surveys</h4>
+                        <p>Ground magnetic, IP/Resistivity, VLF, gravity, radiometric, and borehole surveys with full data acquisition, processing, and interpretation.</p>
+                    </div>
+                </div>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-drilling-operations.jpg" alt="Drilling Operations" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-tools"></i></div>
+                        <h4>Drilling & Core Management</h4>
+                        <p>Supervision of RC, Diamond, Air Core, and Auger drilling. Includes planning, core management, QA/QC, and partner coordination.</p>
+                    </div>
+                </div>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-geochemical-sampling.jpg" alt="Geochemical Sampling" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-vials"></i></div>
+                        <h4>Geochemical Sampling & Assay</h4>
+                        <p>Rock chip, soil, and sediment sampling programs with sample tracking and management through accredited laboratory partnerships.</p>
+                    </div>
+                </div>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-investment-support.jpg" alt="Investment Support" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Investment Readiness & Support</h4>
+                        <p>JV/licensing support, data room setup for capital raising, ESG alignment, and technical strategy for asset valuation growth.</p>
+                    </div>
+                </div>
+                <div class="service-card service-card-with-image">
+                    <img src="site-images/service-resource-modeling.jpg" alt="3D Resource Modeling" class="service-image">
+                    <div class="service-content">
+                        <div class="service-icon"><i class="fas fa-cubes"></i></div>
+                        <h4>Resource Estimation & Modeling</h4>
+                        <p>JORC/NI 43-101 compliant geological/grade modeling, 3D block modeling, variography, and resource estimation using Leapfrog & Surpac.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-rayyan" class="why-rayyan section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">Why</span>
+                    <span class="title-word">Rayyan?</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">We aren't just another mining services company — we're a growth engine for future-critical resources, built on science, trust, and a deep understanding of the land and its potential.</p>
+            </div>
+            <div class="why-rayyan-grid">
+                <div class="why-card">
+                    <h3>1. Strategically Positioned</h3>
+                    <p>Our work is rooted in the Arabian Shield — one of the world's last great mineral frontiers. With active licenses and strong JV access, we're unlocking gold, base metals, and critical minerals in one of the most promising yet underexplored terrains globally.</p>
+                </div>
+                <div class="why-card">
+                    <h3>2. Technical Excellence</h3>
+                    <p>Our multidisciplinary team applies advanced geological, geophysical, and drilling methods, backed by NI 43-101 and JORC-compliant standards, supported by international specialists from Canada, Sudan, France, and more.</p>
+                </div>
+                <div class="why-card">
+                    <h3>3. Trusted by Leaders</h3>
+                    <p>From national mining companies to ambitious juniors, Rayyan is the partner of choice. We deliver results with transparency, thorough technical insight, and a strong reputation earned through execution.</p>
+                </div>
+                <div class="why-card">
+                    <h3>4. Full-Cycle Services</h3>
+                    <p>No need to coordinate between different vendors. Rayyan offers it all under one roof: mapping, sampling, geophysics, drilling, modeling, resource estimation, and JV planning. We make it easier for our clients to move faster and smarter through every phase.</p>
+                </div>
+                <div class="why-card">
+                    <h3>5. Built for Long-Term Value</h3>
+                    <p>Our focus isn't just hitting the next milestone. We help our clients grow the long-term value of their projects through proprietary data, repeatable systems, and credibility with investors.</p>
+                </div>
+                <div class="why-card">
+                    <h3>6. People & Responsibility</h3>
+                    <p>Behind every survey and drill rig is a team that cares. We combine local knowledge with global standards, ensuring community respect, environmental awareness, and a shared vision for responsible growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="certifications section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">ISO</span>
+                    <span class="title-word">Certifications</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">Our commitment to excellence is validated by internationally recognized ISO certifications, ensuring quality, environmental responsibility, and workplace safety in all our operations.</p>
+            </div>
+
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="site-images/iso-quality-management.png" alt="ISO Quality Management System Certification" loading="lazy">
+                    </div>
+                    <div class="certification-content">
+                        <h3>ISO 9001:2015</h3>
+                        <h4>Quality Management System</h4>
+                        <p>Demonstrates our commitment to delivering consistent, high-quality services that meet customer and regulatory requirements through systematic quality management processes.</p>
+                        <div class="certification-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Consistent Service Quality</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Customer Satisfaction</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Continuous Improvement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="site-images/iso-environmental-management.png" alt="ISO Environmental Management System Certification" loading="lazy">
+                    </div>
+                    <div class="certification-content">
+                        <h3>ISO 14001:2015</h3>
+                        <h4>Environmental Management System</h4>
+                        <p>Validates our dedication to environmental stewardship through systematic management of environmental impacts and sustainable exploration practices.</p>
+                        <div class="certification-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>Environmental Protection</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>Waste Reduction</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>Sustainable Operations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="site-images/iso-health-safety.png" alt="ISO Occupational Health and Safety Management System Certification" loading="lazy">
+                    </div>
+                    <div class="certification-content">
+                        <h3>ISO 45001:2018</h3>
+                        <h4>Occupational Health & Safety Management System</h4>
+                        <p>Ensures the highest standards of workplace safety and health protection for our team members, contractors, and all stakeholders involved in our operations.</p>
+                        <div class="certification-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Worker Safety</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Risk Management</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Compliance Standards</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certifications-footer">
+                <div class="certifications-statement">
+                    <h3>Our Commitment to Excellence</h3>
+                    <p>These certifications reflect our unwavering dedication to maintaining the highest standards across all aspects of our operations. They ensure that our clients receive not only technically superior services but also the assurance that every project is executed with integrity, environmental consciousness, and the utmost regard for safety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">Our</span>
+                    <span class="title-word">Projects</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">Actively executing and managing projects in strategically significant exploration zones in Saudi Arabia.</p>
+            </div>
+
+            <div class="projects-overview">
+                <div class="projects-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Active Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Geological Belts</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="stat-number">9</div>
+                        <div class="stat-label">License Areas</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Target Metals</div>
+                    </div>
+                </div>
+                
+                <div class="projects-summary">
+                    <h3>Our Portfolio</h3>
+                    <p>Our diverse project portfolio spans across the most promising geological terranes of the Arabian Shield, targeting precious and base metals through strategic partnerships and advanced exploration techniques.</p>
+                    
+                    <div class="project-highlights-grid">
+                        <div class="highlight-item">
+                            <h4>Umm Hadid Project</h4>
+                            <p>500,000 tonnes @ 343 g/t Ag resource in the Afif Terrane</p>
+                            <span class="status-badge active">Active</span>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Kenz Global JV</h4>
+                            <p>9 license areas across Afif, Nuqrah, and Zalim belts</p>
+                            <span class="status-badge onboarding">Onboarding</span>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Alkhadarah Prospect</h4>
+                            <p>Grassroots gold prospect in the Afif region</p>
+                            <span class="status-badge completed">Phase 1 Complete</span>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Riyadh Province</h4>
+                            <p>99.4 km² license targeting multiple metals</p>
+                            <span class="status-badge active">Active Phase 2</span>
+                        </div>
+                    </div>
+                    
+                    <div class="projects-cta">
+                        <a href="projects.html" class="btn btn-primary">
+                            <span>View Detailed Projects</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <div class="section-header" style="margin-top: 5rem;">
+                <h2 class="section-title">
+                    <span class="title-word">Our Work</span>
+                    <span class="title-word">in Action</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">Explore our field operations, advanced equipment, and technical expertise across various geological and mining projects.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="site-images/gallery-field-operations.jpg" alt="Field Operations" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h4>Field Operations</h4>
+                        <p>Advanced geological mapping and sampling in challenging terrain conditions</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="site-images/gallery-drilling-operations.jpg" alt="Drilling" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h4>Drilling</h4>
+                        <p>State-of-the-art drilling equipment for core sampling and resource exploration</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="site-images/gallery-geophysical-survey.jpg" alt="Ground magnetic and IP surveys for subsurface mapping" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h4>Ground magnetic and IP surveys for subsurface mapping</h4>
+                        <p>Ground magnetic and electromagnetic surveys for subsurface mapping</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="partners" class="partners section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">Partners &</span>
+                    <span class="title-word">Alliances</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">Our trusted partners and strategic alliances across the global mining industry.</p>
+            </div>
+
+            <div class="partners-marquee">
+                <div class="marquee-content">
+                    <div class="partner-logo">
+                        <img src="site-images/partner-1.png" alt="Partner 1" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-2.webp" alt="Partner 2" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-3.png" alt="Partner 3" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-4.jpg" alt="Partner 4" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-5.jpg" alt="Partner 5" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-6.jpg" alt="Partner 6" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-7.png" alt="Partner 7" />
+                    </div>
+                    <!-- Duplicate logos for seamless loop -->
+                    <div class="partner-logo">
+                        <img src="site-images/partner-1.png" alt="Partner 1" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-2.webp" alt="Partner 2" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-3.png" alt="Partner 3" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-4.jpg" alt="Partner 4" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-5.jpg" alt="Partner 5" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-6.jpg" alt="Partner 6" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-7.png" alt="Partner 7" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="invest" class="invest section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">Invest</span>
+                    <span class="title-word">With Us</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">Be part of the Arabian Shield's Mining Renaissance.</p>
+            </div>
+            <div class="invest-grid">
+                <div class="invest-reasons">
+                    <div class="invest-card">
+                        <h3>Why Invest in Rayyan?</h3>
+                        <p>We offer a unique opportunity for forward-looking investors to engage in valuation-driven mineral exploration across Saudi Arabia and select emerging markets.</p>
+                        <ul class="invest-list">
+                            <li><strong>Strategic Positioning:</strong> Direct access to high-potential licenses.</li>
+                            <li><strong>Scalable Business Model:</strong> End-to-end services with data monetization potential.</li>
+                            <li><strong>High-Growth Markets:</strong> Operating at the center of Saudi Arabia's mining boom.</li>
+                            <li><strong>Strong Technical Foundation:</strong> Projects aligned with JORC and NI 43-101 standards.</li>
+                            <li><strong>Exit-Ready Strategy:</strong> Clear roadmap for IPO, equity sale, or JV buyouts.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="invest-opportunities">
+                    <div class="invest-card">
+                        <h3>Current Opportunities</h3>
+                         <ul class="invest-list">
+                            <li><strong>Joint Ventures:</strong> Co-fund and co-own select exploration licenses.</li>
+                            <li><strong>Convertible Equity:</strong> Participate in our growth while preserving upside.</li>
+                            <li><strong>Project Financing:</strong> Support defined field programs with clear ROI.</li>
+                            <li><strong>Strategic Partnership:</strong> Build value through technology, capital, or offtake.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="esg" class="esg section">
+        <div class="container">
+             <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">ESG &</span>
+                    <span class="title-word">Vision 2030</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">Exploration that respects people, planet, and policy.</p>
+                <div class="vision-logo">
+                    <img src="site-images/vision-2030-logo.png" alt="Vision 2030 Logo" class="vision-logo-img">
+                </div>
+            </div>
+            <div class="esg-grid">
+                <div class="esg-card">
+                    <div class="esg-icon">♻️</div>
+                    <h3>Environmental Stewardship</h3>
+                    <p>We are committed to protecting the environments we work in — both for today and for future generations.</p>
+                    <ul>
+                        <li>Minimal surface disturbance: We design exploration programs that limit clearing and excavation.</li>
+                        <li>Site rehabilitation: After drilling, we restore sites to their natural state in line with regulatory standards.</li>
+                        <li>Remote and drone-based surveys: Where possible, we use drone technology to reduce the need for physical access and lower our impact.</li>
+                    </ul>
+                </div>
+                <div class="esg-card">
+                    <div class="esg-icon">👥</div>
+                    <h3>Social Responsibility</h3>
+                    <p>We prioritize local engagement, and it strengthens every project we work on.</p>
+                     <ul>
+                        <li>Hiring and training local talent: We invest in building local technical capacity wherever we operate.</li>
+                        <li>Partnering with Saudi SMEs: Our supply chain supports national companies, fostering local economic growth.</li>
+                        <li>Community awareness and respect: We approach every site with cultural sensitivity and open communication.</li>
+                    </ul>
+                </div>
+                <div class="esg-card">
+                    <div class="esg-icon">📋</div>
+                    <h3>Governance & Compliance</h3>
+                    <p>Transparency, integrity, and alignment with national goals guide our operations.</p>
+                     <ul>
+                        <li>Full compliance with Saudi Mining Law and environmental regulations.</li>
+                        <li>Alignment with Vision 2030: Supporting localization, sustainability, and private-sector leadership in mining.</li>
+                        <li>Reporting standards: Our technical reports follow international frameworks, including JORC and NI 43-101, ensuring accountability and investor confidence.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="news section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">News &</span>
+                    <span class="title-word">Media</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">Follow Rayyan's journey across the Arabian Shield and beyond.</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <p class="date">📍 May 2025</p>
+                    <h4>Strategic Plan 2025–2027 Finalized</h4>
+                    <p>Unveiled 3-year roadmap focused on valuation growth, scaling operations, and preparing for potential IPO.</p>
+                </div>
+                <div class="news-card">
+                    <p class="date">📍 April 2025</p>
+                    <h4>Umm Hadid Project Enters Advanced Phase</h4>
+                    <p>Significant structural mapping and ground geophysics completed on one of Rayyan's flagship assets.</p>
+                </div>
+                <div class="news-card">
+                    <p class="date">📍 March 2025</p>
+                    <h4>Kenz Global Resources JV Announced</h4>
+                    <p>Four licenses across the Arabian Shield secured for joint technical and investor-led development.</p>
+                </div>
+                <div class="news-card">
+                    <p class="date">📍 February 2025</p>
+                    <h4>Rayyan Resources at PDAC 2025</h4>
+                    <p>CEO Nadir Elnour presented Saudi exploration investment opportunities to Canadian and global investors in Toronto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">Get In</span>
+                    <span class="title-word">Touch</span>
+                </h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Saudi Arabia (HQ)</h4>
+                        <p>Olaya Street, Riyadh</p>
+                    </div>
+                     <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>UAE Office</h4>
+                        <p>Dubai, United Arab Emirates</p>
+                    </div>
+                     <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Canada Office</h4>
+                        <p>Toronto, Ontario</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email Us</h4>
+                        <p><a href="mailto:info@rayyanresources.com">info@rayyanresources.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="site-images/logo-white.png" alt="Rayyan Resources Logo" class="footer-logo">
+                    <p>Unlocking value from discovery to decision. Your trusted platform for modern mineral exploration across Saudi Arabia and beyond.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="#why-rayyan">Why Rayyan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                     <ul>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#news">News & Media</a></li>
+                        <li><a href="#esg">ESG & Vision 2030</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@rayyanresources.com">info@rayyanresources.com</a></li>
+                        <li><a href="mailto:invest@rayyanresources.com">invest@rayyanresources.com</a></li>
+                        <li><a href="mailto:careers@rayyanresources.com">careers@rayyanresources.com</a></li>
+                         <li><a href="mailto:media@rayyanresources.com">media@rayyanresources.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2025</span> Rayyan Resources. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // script.js content
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all features
+            initPreloader();
+            initNavigation();
+            initAnimations();
+            initParticles();
+            initFormHandling();
+            initScrollEffects();
+            initDynamicYear();
+        });
+
+        // Preloader
+        function initPreloader() {
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    preloader.classList.add('hide');
+                }, 500);
+            });
+        }
+
+        // Navigation
+        function initNavigation() {
+            const navbar = document.getElementById('navbar');
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const dropdownToggles = document.querySelectorAll('.nav-dropdown .dropdown-toggle'); 
+            
+            // Scroll behavior
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                // Auto-close mobile menu on scroll
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
+                
+                // Active link highlighting
+                let currentSection = '';
+                const sections = document.querySelectorAll('section[id]');
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - navbar.offsetHeight - 50;
+                    if (scrollTop >= sectionTop) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSection}` || (link.parentElement.classList.contains('nav-dropdown') && link.parentElement.querySelector(`[href="#${currentSection}"]`))) {
+                        link.classList.add('active');
+                    }
+                });
+
+
+            });
+            
+            // Mobile menu toggle
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active'); 
+            });
+            
+            // Mobile dropdown toggle
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) { 
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        
+                        document.querySelectorAll('.nav-dropdown.active').forEach(d => {
+                            if (d !== dropdown) d.classList.remove('active');
+                        });
+                        
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+            
+            // Smooth scroll for all links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const navbarHeight = document.getElementById('navbar')?.offsetHeight || 0;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+            
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu on link click
+                        if (navMenu.classList.contains('active')) {
+                           navMenu.classList.remove('active');
+                           navToggle.classList.remove('active');
+                        }
+                    }
+                });
+            });
+        }
+
+        // Intersection Observer for animations
+        function initAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.section-header, .about-grid, .mission-vision, .services-grid > *, .why-rayyan-grid > *, .certifications-grid > *, .projects-grid > *, .partner-card, .invest-grid > *, .esg-grid > *, .news-grid > *, .team-grid > *, .careers-cta').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Particle system
+        function initParticles() {
+            const particleContainer = document.querySelector('.particle-container');
+            if (!particleContainer) return;
+            const particleCount = 30; 
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                const size = Math.random() * 3 + 1;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.position = 'absolute';
+                particle.style.background = 'var(--accent-blue)';
+                particle.style.borderRadius = '50%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.opacity = Math.random() * 0.5 + 0.2;
+                particle.style.animation = `particleFloat ${(Math.random() * 15 + 10)}s linear infinite`;
+                particleContainer.appendChild(particle);
+            }
+             if (!document.querySelector('style[data-anim="particleFloat"]')) {
+                const style = document.createElement('style');
+                style.setAttribute('data-anim', 'particleFloat');
+                style.innerHTML = `
+                    @keyframes particleFloat {
+                        from { transform: translateY(0px) translateX(0px); }
+                        50% { transform: translateY(-20px) translateX(10px); }
+                        to { transform: translateY(0px) translateX(0px); }
+                    }`;
+                document.head.appendChild(style);
+            }
+        }
+
+        // Form handling
+        function initFormHandling() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) { 
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                                        
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        contactForm.reset();
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        showNotification('Message sent successfully!', 'success'); 
+                    }, 2000);
+                });
+            }
+        }
+
+        // Scroll-based effects
+        function initScrollEffects() {
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                const heroBg = document.querySelector('.hero-bg'); 
+                if (heroBg) {
+                    heroBg.style.transform = `translateY(${currentScroll * 0.4}px)`; 
+                }
+            });
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.innerHTML = `<span>${message}</span>`;
+            
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: ${type === 'success' ? 'var(--accent-blue)' : 'var(--secondary-dark)'};
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                box-shadow: var(--shadow-lg);
+                z-index: 9999; 
+                opacity: 0;
+                transition: opacity 0.5s, transform 0.5s;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                 notification.style.opacity = '1';
+                 notification.style.transform = 'translateX(-50%) translateY(-20px)';
+            }, 100);
+
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(-50%) translateY(0)';
+                setTimeout(() => {
+                    notification.remove();
+                }, 500);
+            }, 3000);
+        }
+
+        function initDynamicYear() {
+            const yearElements = document.querySelectorAll('.current-year'); 
+            const currentYear = new Date().getFullYear();
+            yearElements.forEach(el => {
+                el.textContent = currentYear;
+            });
+        }
+
+    </script>
+</body>
+</html> 

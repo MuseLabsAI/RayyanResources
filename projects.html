@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - Rayyan Resources</title>
+    <meta name="description" content="Discover our active mineral exploration projects across the Arabian Shield, including precious metals, base metals, and strategic joint ventures.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Variables - Based on Al Rayyan color palette */
+        :root {
+            --primary-dark: #002A4A;
+            --secondary-dark: #5C6670;
+            --accent-blue: #96ADCB;
+            --light-blue: #F8F9FA;
+            --light-gray: #D2CCBE;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #f8f9fa;
+            --success-green: #22c55e;
+            --warning-orange: #f59e0b;
+            --gradient-1: linear-gradient(135deg, #002A4A 0%, #5C6670 100%);
+            --gradient-2: linear-gradient(135deg, #5C6670 0%, #96ADCB 100%);
+            --gradient-3: linear-gradient(135deg, #96ADCB 0%, #F8F9FA 100%);
+            --shadow-sm: 0 2px 10px rgba(0, 42, 74, 0.1);
+            --shadow-md: 0 5px 20px rgba(0, 42, 74, 0.15);
+            --shadow-lg: 0 10px 40px rgba(0, 42, 74, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--gradient-1);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('site-images/hero-background.png') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-content {
+            color: var(--white);
+        }
+
+        .header-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .header-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--white);
+            transform: translateX(-5px);
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 5rem 0;
+            background: var(--light-blue);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Image Carousel */
+        .project-carousel {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-image {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 75%;
+        }
+
+        .project-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        .status-active {
+            background: rgba(34, 197, 94, 0.9);
+            color: white;
+        }
+
+        .status-onboarding {
+            background: rgba(245, 158, 11, 0.9);
+            color: white;
+        }
+
+        .status-completed {
+            background: rgba(92, 102, 112, 0.9);
+            color: white;
+        }
+
+        .status-phase2 {
+            background: rgba(150, 173, 203, 0.9);
+            color: white;
+        }
+
+        /* Navigation Arrows */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 42, 74, 0.8);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+            font-size: 1.2rem;
+            opacity: 0;
+        }
+
+        .carousel-container:hover .carousel-nav {
+            opacity: 1;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(0, 42, 74, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: 10px;
+        }
+
+        .carousel-nav.next {
+            right: 10px;
+        }
+
+        /* Dot Indicators */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .carousel-dot.active,
+        .carousel-dot:hover {
+            background: var(--accent-blue);
+            transform: scale(1.2);
+        }
+
+        /* Hide controls on single image carousels */
+        .carousel-container[data-single="true"] .carousel-nav,
+        .carousel-container[data-single="true"] .carousel-indicators {
+            display: none;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .project-metals {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .metal-tag {
+            background: var(--gradient-3);
+            color: var(--secondary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-owner {
+            color: var(--secondary-dark);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-dark);
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .project-highlights {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-highlights h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .highlights-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .highlights-list li {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            padding: 0.25rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .highlights-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+        }
+
+        .project-objective {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary-dark);
+        }
+
+        .project-objective h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-objective p {
+            color: var(--text-dark);
+            font-style: italic;
+        }
+
+        .project-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary-dark);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            opacity: 0.7;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .title-word {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .title-word:nth-child(2) {
+            color: var(--secondary-dark);
+        }
+
+        .title-underline {
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-2);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 1rem auto 0;
+            opacity: 0.8;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 42, 74, 0.9));
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            height: 40px;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .project-card {
+                margin: 0 10px;
+            }
+
+            .project-carousel {
+                height: 250px;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .project-title {
+                font-size: 1.3rem;
+            }
+
+            .highlights-list {
+                grid-template-columns: 1fr;
+            }
+
+            .project-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .gallery-image {
+                height: 200px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                gap: 1.5rem;
+            }
+
+            .project-content {
+                padding: 1rem;
+            }
+
+            .project-title {
+                font-size: 1.2rem;
+            }
+
+            .project-objective {
+                padding: 1rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-image {
+                height: 180px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .gallery-overlay {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+                <h1 class="header-title">Our Projects</h1>
+                <p class="header-subtitle">Discover our active mineral exploration projects across the Arabian Shield, targeting precious metals, base metals, and strategic joint ventures.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-grid">
+                <!-- Umm Hadid Project -->
+                <div class="project-card">
+                    <div class="project-carousel">
+                        <div class="carousel-container" data-carousel="umm-hadid">
+                            <div class="carousel-track">
+                                <img src="Our Projects/Umm Hadid/WhatsApp Image 2025-03-25 at 20.49.03_28e5c056.jpg" alt="Umm Hadid Project" class="carousel-image" loading="lazy">
+                                <img src="Our Projects/Umm Hadid/WhatsApp Image 2025-03-25 at 20.49.04_77c94969.jpg" alt="Umm Hadid Project" class="carousel-image" loading="lazy">
+                                <img src="Our Projects/Umm Hadid/WhatsApp Image 2025-03-25 at 20.49.04_f8989a88.jpg" alt="Umm Hadid Project" class="carousel-image" loading="lazy">
+                                <img src="Our Projects/Umm Hadid/WhatsApp Image 2025-03-25 at 20.49.05_3b264a14.jpg" alt="Umm Hadid Project" class="carousel-image" loading="lazy">
+                            </div>
+                            <button class="carousel-nav prev" data-direction="prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-nav next" data-direction="next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <div class="carousel-indicators">
+                                <button class="carousel-dot" data-index="0"></button>
+                                <button class="carousel-dot" data-index="1"></button>
+                                <button class="carousel-dot active" data-index="2"></button>
+                                <button class="carousel-dot" data-index="3"></button>
+                            </div>
+                        </div>
+                        <div class="project-status status-active">Active</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Umm Hadid Project</h3>
+                            <div class="project-metals">
+                                <span class="metal-tag">Ag</span>
+                                <span class="metal-tag">Pb</span>
+                                <span class="metal-tag">Zn</span>
+                            </div>
+                            <p class="project-owner">Owner: Silver Mining Company (SMC)</p>
+                        </div>
+                        
+                        <p class="project-description">
+                            Located in the southern Afif Terrane, this project targets a historic resource of approximately 500,000 tonnes at 343 g/t silver. Mineralization is hosted in polymetallic quartz–carbonate veins associated with major shear zones.
+                        </p>
+
+                        <div class="project-highlights">
+                            <ul class="highlights-list">
+                                <li>Geological &amp; structural mapping (34 traverses)</li>
+                                <li>Rock sampling and mineralization tracing</li>
+                                <li>Ground magnetic &amp; IP surveys</li>
+                                <li>Diamond drilling program</li>
+                                <li>OTV Survey</li>
+                                <li>Core Logging</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-objective">
+                            <h4>Objective</h4>
+                            <p>Position Umm Hadid as a JV-ready, drill-stage silver-lead-zinc asset with compelling economics.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kenz Global JV Projects -->
+                <div class="project-card">
+                    <div class="project-carousel">
+                        <div class="carousel-container" data-carousel="kenz-global" data-single="true">
+                            <div class="carousel-track">
+                                <img src="Our Projects/Kenz Global JV Projects/5787617252433052488.jpg" alt="Kenz Global JV Projects" class="carousel-image" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="project-status status-onboarding">Onboarding</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Kenz Global JV Projects</h3>
+                            <div class="project-metals">
+                                <span class="metal-tag">Au</span>
+                                <span class="metal-tag">Cu</span>
+                                <span class="metal-tag">Ag</span>
+                            </div>
+                            <p class="project-owner">Structure: Rayyan–Kenz Strategic JV</p>
+                        </div>
+                        
+                        <p class="project-description">
+                            This strategic JV covers 9 license areas across the Afif, Nuqrah, and Zalim belts, targeting Gold, Copper, and Silver. Rayyan serves as the exclusive exploration partner.
+                        </p>
+
+                        <div class="project-highlights">
+                            <ul class="highlights-list">
+                                <li>Right of first refusal (ROF) agreements</li>
+                                <li>Data compilation and target generation</li>
+                                <li>JV structuring for investor readiness</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-objective">
+                            <h4>Objective</h4>
+                            <p>Aggregate 9 high-potential licenses into a single valuation stack targeting TSX or Nomu capital markets.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alkhadarah Prospect Project -->
+                <div class="project-card">
+                    <div class="project-carousel">
+                        <div class="carousel-container" data-carousel="alkhadarah">
+                            <div class="carousel-track">
+                                <img src="Our Projects/Alkhadarah Prospect Project (Au)/WhatsApp Image 2025-07-10 at 06.59.52.jpeg" alt="Alkhadarah Prospect Project" class="carousel-image" loading="lazy">
+                                <img src="Our Projects/Alkhadarah Prospect Project (Au)/WhatsApp Image 2025-07-10 at 06.59.53.jpeg" alt="Alkhadarah Prospect Project" class="carousel-image" loading="lazy">
+                                <img src="Our Projects/Alkhadarah Prospect Project (Au)/WhatsApp Image 2025-07-10 at 06.59.54.jpeg" alt="Alkhadarah Prospect Project" class="carousel-image" loading="lazy">
+                                <img src="Our Projects/Alkhadarah Prospect Project (Au)/WhatsApp Image 2025-07-10 at 06.59.55.jpeg" alt="Alkhadarah Prospect Project" class="carousel-image" loading="lazy">
+                            </div>
+                            <button class="carousel-nav prev" data-direction="prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-nav next" data-direction="next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <div class="carousel-indicators">
+                                <button class="carousel-dot" data-index="0"></button>
+                                <button class="carousel-dot" data-index="1"></button>
+                                <button class="carousel-dot" data-index="2"></button>
+                                <button class="carousel-dot active" data-index="3"></button>
+                            </div>
+                        </div>
+                        <div class="project-status status-completed">Phase 1 Completed</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Alkhadarah Prospect Project</h3>
+                            <div class="project-metals">
+                                <span class="metal-tag">Au</span>
+                            </div>
+                            <p class="project-owner">Owner: Kenz Global Resources</p>
+                        </div>
+                        
+                        <p class="project-description">
+                            A grassroots gold prospect located in the Afif region of the Arabian Shield. The project focuses on identifying mineralization within shear zones and at the contact between metavolcanics and intrusive granites.
+                        </p>
+
+                        <div class="project-highlights">
+                            <ul class="highlights-list">
+                                <li>Geological &amp; remote sensing mapping</li>
+                                <li>Systematic trenching and channel sampling</li>
+                                <li>Geochemical analysis and interpretation</li>
+                                <li>Prospect evaluation reporting</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-objective">
+                            <h4>Objective</h4>
+                            <p>Conduct a systematic, first-pass evaluation to identify priority zones and provide clear recommendations for the next phase of exploration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exploration Program in Riyadh Province -->
+                <div class="project-card">
+                    <div class="project-carousel">
+                        <div class="carousel-container" data-carousel="riyadh-province">
+                            <div class="carousel-track">
+                                <img src="Our Projects/Exploration Program in Riyadh Province (Au, Ag, Cu, Ni)/Screenshot 2025-07-12 091342.png" alt="Riyadh Province Exploration" class="carousel-image" loading="lazy">
+                                <img src="Our Projects/Exploration Program in Riyadh Province (Au, Ag, Cu, Ni)/Screenshot 2025-07-12 091439.png" alt="Riyadh Province Exploration" class="carousel-image" loading="lazy">
+                                <img src="Our Projects/Exploration Program in Riyadh Province (Au, Ag, Cu, Ni)/Screenshot 2025-07-12 091447.png" alt="Riyadh Province Exploration" class="carousel-image" loading="lazy">
+                                <img src="Our Projects/Exploration Program in Riyadh Province (Au, Ag, Cu, Ni)/WhatsApp Image 2025-07-12 at 09.08.44 (2).jpeg" alt="Riyadh Province Exploration" class="carousel-image" loading="lazy">
+                            </div>
+                            <button class="carousel-nav prev" data-direction="prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-nav next" data-direction="next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <div class="carousel-indicators">
+                                <button class="carousel-dot" data-index="0"></button>
+                                <button class="carousel-dot active" data-index="1"></button>
+                                <button class="carousel-dot" data-index="2"></button>
+                                <button class="carousel-dot" data-index="3"></button>
+                            </div>
+                        </div>
+                        <div class="project-status status-phase2">Phase 1 Completed, Active Phase 2</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Exploration Program in Riyadh Province</h3>
+                            <div class="project-metals">
+                                <span class="metal-tag">Au</span>
+                                <span class="metal-tag">Ag</span>
+                                <span class="metal-tag">Cu</span>
+                                <span class="metal-tag">Ni</span>
+                            </div>
+                            <p class="project-owner">Owner: Marzuk Bin Musallam Al-Mahmadi Equipment Rental Co.</p>
+                        </div>
+                        
+                        <p class="project-description">
+                            A large 99.4 km² license in the Riyadh Region with potential for structurally controlled precious and base metal deposits. The program targets major N-S trending shear zones and prospective geological contacts.
+                        </p>
+
+                        <div class="project-highlights">
+                            <ul class="highlights-list">
+                                <li>Detailed geological mapping (1:5,000 scale)</li>
+                                <li>Targeted rock chip &amp; channel sampling</li>
+                                <li>Digital data capture with QGIS/QField</li>
+                                <li>Implementation of JORC-compliant QA/QC protocols</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-objective">
+                            <h4>Objective</h4>
+                            <p>Systematically explore the license area to generate and prioritize high-quality targets for future drilling campaigns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">Our Work</span>
+                    <span class="title-word">in Action</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">Explore our field operations, advanced equipment, and technical expertise across various geological and mining projects.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="site-images/gallery-field-operations.jpg" alt="Field Operations" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h4>Field Operations</h4>
+                        <p>Advanced geological mapping and sampling in challenging terrain conditions</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="site-images/gallery-drilling-operations.jpg" alt="Drilling" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h4>Drilling</h4>
+                        <p>State-of-the-art drilling equipment for core sampling and resource exploration</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="site-images/gallery-geophysical-survey.jpg" alt="Ground magnetic and IP surveys for subsurface mapping" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h4>Ground magnetic and IP surveys for subsurface mapping</h4>
+                        <p>Ground magnetic and electromagnetic surveys for subsurface mapping</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="logo color 2.png" alt="Rayyan Resources" class="footer-logo">
+                <p class="footer-text">&copy; 2025 Rayyan Resources. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize carousels
+            const carousels = document.querySelectorAll('.carousel-container');
+            
+            carousels.forEach(carousel => {
+                const track = carousel.querySelector('.carousel-track');
+                const images = carousel.querySelectorAll('.carousel-image');
+                const prevBtn = carousel.querySelector('.carousel-nav.prev');
+                const nextBtn = carousel.querySelector('.carousel-nav.next');
+                const dots = carousel.querySelectorAll('.carousel-dot');
+                const carouselId = carousel.getAttribute('data-carousel');
+                
+                let currentIndex = 0;
+                const totalImages = images.length;
+                
+                // Skip single image carousels
+                if (totalImages <= 1) return;
+                
+                // Set custom starting images for specific projects
+                const customStartImages = {
+                    'umm-hadid': 2,              // Third image (index 2)
+                    'riyadh-province': 1,        // Second image (index 1)
+                    'alkhadarah': 3              // Last image (index 3)
+                };
+                
+                // Set initial index based on project
+                if (customStartImages.hasOwnProperty(carouselId)) {
+                    currentIndex = customStartImages[carouselId];
+                }
+                
+                // Function to update carousel position
+                function updateCarousel(index) {
+                    const translateX = -index * 100;
+                    track.style.transform = `translateX(${translateX}%)`;
+                    
+                    // Update dots
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+                    
+                    currentIndex = index;
+                }
+                
+                // Initialize carousel with custom starting position
+                updateCarousel(currentIndex);
+                
+                // Next button click
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        const nextIndex = (currentIndex + 1) % totalImages;
+                        updateCarousel(nextIndex);
+                    });
+                }
+                
+                // Previous button click
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        const prevIndex = (currentIndex - 1 + totalImages) % totalImages;
+                        updateCarousel(prevIndex);
+                    });
+                }
+                
+                // Dot click handlers
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        updateCarousel(index);
+                    });
+                });
+                
+                // Optional: Add keyboard navigation
+                carousel.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') {
+                        prevBtn.click();
+                    } else if (e.key === 'ArrowRight') {
+                        nextBtn.click();
+                    }
+                });
+                
+                // Make carousel focusable for keyboard navigation
+                carousel.setAttribute('tabindex', '0');
+            });
+        });
+    </script>
+</body>
+</html> 
