@@ -7,25 +7,26 @@
     <meta name="description" content="Rayyan Resources is a leading mineral exploration and services company in Saudi Arabia, building high-value opportunities across the Arabian Shield and beyond.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* styles.css content */
-        /* Global Variables - Based on the color palette */
+        /* Global Variables - Based on Al Rayyan color palette */
         :root {
-            --primary-dark: #27374D;
-            --secondary-dark: #526DB2;
-            --accent-blue: #9DB2BF;
-            --light-blue: #DDE6ED;
+            --primary-dark: #002A4A;
+            --secondary-dark: #5C6670;
+            --accent-blue: #96ADCB;
+            --light-blue: #F8F9FA;
+            --light-gray: #D2CCBE;
             --white: #ffffff;
             --text-dark: #1a1a1a;
             --text-light: #f8f9fa;
-            --gradient-1: linear-gradient(135deg, #27374D 0%, #526DB2 100%);
-            --gradient-2: linear-gradient(135deg, #526DB2 0%, #9DB2BF 100%);
-            --gradient-3: linear-gradient(135deg, #9DB2BF 0%, #DDE6ED 100%);
-            --shadow-sm: 0 2px 10px rgba(39, 55, 77, 0.1);
-            --shadow-md: 0 5px 20px rgba(39, 55, 77, 0.15);
-            --shadow-lg: 0 10px 40px rgba(39, 55, 77, 0.2);
+            --gradient-1: linear-gradient(135deg, #002A4A 0%, #5C6670 100%);
+            --gradient-2: linear-gradient(135deg, #5C6670 0%, #96ADCB 100%);
+            --gradient-3: linear-gradient(135deg, #96ADCB 0%, #F8F9FA 100%);
+            --shadow-sm: 0 2px 10px rgba(0, 42, 74, 0.1);
+            --shadow-md: 0 5px 20px rgba(0, 42, 74, 0.15);
+            --shadow-lg: 0 10px 40px rgba(0, 42, 74, 0.2);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -41,7 +42,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Source Sans Pro', sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--white);
@@ -61,7 +62,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: var(--primary-dark);
+            background: var(--light-blue);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -81,7 +82,7 @@
         .loader-ring {
             width: 80px;
             height: 80px;
-            border: 3px solid var(--light-blue);
+            border: 3px solid var(--light-gray);
             border-top-color: var(--accent-blue);
             border-radius: 50%;
             animation: spin 1s linear infinite;
@@ -94,7 +95,7 @@
         }
 
         .loader-text {
-            color: var(--light-blue);
+            color: var(--primary-dark);
             font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: 3px;
@@ -115,7 +116,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(39, 55, 77, 0.95);
+            background: rgba(0, 42, 74, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             transition: var(--transition);
@@ -560,7 +561,7 @@
         }
 
         .section:nth-child(even) {
-            background: #f8f9fa;
+            background: var(--light-blue);
         }
 
         .section-header {
@@ -757,6 +758,154 @@
             line-height: 1.8;
         }
 
+        /* Team Section */
+        .team {
+            background: var(--light-blue); /* Light background for team section */
+        }
+
+        .team .section-title {
+            color: var(--primary-dark);
+        }
+
+        .team .section-desc {
+            color: var(--text-dark);
+        }
+
+        .team .title-word:nth-child(2) {
+            color: var(--secondary-dark);
+        }
+
+        .team-leadership,
+        .team-field,
+        .team-careers {
+            margin-bottom: 4rem;
+        }
+
+        .team-section-title {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .team-section-desc {
+            color: var(--text-dark);
+            opacity: 0.9;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            text-align: center;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-image img {
+            transform: scale(1.05);
+        }
+
+        .team-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(39, 55, 77, 0.8), rgba(82, 109, 178, 0.8));
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .team-card:hover .team-overlay {
+            opacity: 1;
+        }
+
+        .team-social {
+            display: flex;
+            gap: 1rem;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-social {
+            transform: translateY(0);
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: var(--accent-blue);
+            transform: scale(1.1);
+        }
+
+        .team-info {
+            padding: 2rem;
+        }
+
+        .team-info h3 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .team-position {
+            color: var(--secondary-dark);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .team-bio {
+            color: var(--text-dark);
+            opacity: 0.8;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
         /* Services Section */
         .services-grid {
             display: grid;
@@ -880,7 +1029,7 @@
 
         /* Why Rayyan Section */
         .why-rayyan {
-            background: #f8f9fa; /* Forcing light background */
+            background: var(--light-blue); /* Forcing light background */
         }
 
         .why-rayyan .section-title {
@@ -921,8 +1070,274 @@
             opacity: 0.9;
         }
 
+        /* Certifications Section */
+        .certifications {
+            background: var(--light-blue);
+        }
+
+        .certifications .section-title {
+            color: var(--primary-dark);
+        }
+
+        .certifications .section-desc {
+            color: var(--text-dark);
+        }
+
+        .certifications .title-word:nth-child(2) {
+            color: var(--secondary-dark);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .certification-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .certification-image {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            padding: 1rem;
+        }
+
+        .certification-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .certification-card:hover .certification-image img {
+            transform: scale(1.05);
+        }
+
+        .certification-content {
+            padding: 2rem;
+        }
+
+        .certification-content h3 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .certification-content h4 {
+            color: var(--secondary-dark);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .certification-content p {
+            color: var(--text-dark);
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .certification-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .benefit-item i {
+            color: var(--secondary-dark);
+            font-size: 1rem;
+        }
+
+        .benefit-item i.fa-leaf {
+            color: #16a34a;
+        }
+
+        .benefit-item i.fa-shield-alt {
+            color: #dc2626;
+        }
+
+        .certifications-footer {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+
+        .certifications-statement h3 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .certifications-statement p {
+            color: var(--text-dark);
+            opacity: 0.9;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
         /* Projects Section */
+        .projects-overview {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .projects-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .stat-icon i {
+            font-size: 1.5rem;
+            color: var(--secondary-dark);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .projects-summary h3 {
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .projects-summary p {
+            color: var(--text-dark);
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .project-highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .highlight-item h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-item p {
+            color: var(--text-dark);
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge.active {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+        }
+
+        .status-badge.onboarding {
+            background: rgba(245, 158, 11, 0.1);
+            color: #d97706;
+        }
+
+        .status-badge.completed {
+            background: rgba(82, 109, 178, 0.1);
+            color: var(--secondary-dark);
+        }
+
+        .projects-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -1072,7 +1487,7 @@
         }
 
         .project-objective {
-            background: #f8f9fa;
+            background: var(--light-gray);
             padding: 1rem;
             border-radius: 10px;
             font-size: 0.95rem;
@@ -1080,52 +1495,90 @@
         }
 
         /* Partners Section */
-        #partners .partner-card {
+        .partners-marquee {
+            width: 100%;
+            overflow: hidden;
             background: white;
-            padding: 2.5rem;
             border-radius: 20px;
             box-shadow: var(--shadow-md);
+            padding: 2rem 0;
+            margin-top: 2rem;
         }
 
-        #partners .partner-card h3 {
-            color: var(--primary-dark);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            text-align: center;
-        }
-        #partners .partner-logos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
+        .marquee-content {
+            display: flex;
             align-items: center;
-        }
-        #partners .partner-logo-item {
-            background: var(--gradient-3);
-            padding: 1rem;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--primary-dark);
-            transition: var(--transition);
+            animation: marquee 30s linear infinite;
+            gap: 3rem;
         }
 
-        #partners .partner-logo-item:hover {
+        .partner-logo {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            min-width: 150px;
+            min-height: 100px;
+        }
+
+        .partner-logo:hover {
             transform: scale(1.05);
-            box-shadow: var(--shadow-sm);
         }
 
-        #partners .partner-logo-img {
-            width: 100%;
-            max-width: 180px; /* Increased size */
+        .partner-logo img {
+            max-width: 120px;
+            max-height: 80px;
+            width: auto;
             height: auto;
-            margin: 0 auto;
-            border-radius: 10px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .partner-logo:hover img {
+            filter: grayscale(0%);
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Pause animation on hover */
+        .partners-marquee:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .marquee-content {
+                gap: 2rem;
+            }
+            
+            .partner-logo {
+                min-width: 120px;
+                min-height: 80px;
+                padding: 1rem;
+            }
+            
+            .partner-logo img {
+                max-width: 100px;
+                max-height: 60px;
+            }
         }
 
         /* Investors Section */
         #invest {
-            background: #f8f9fa;
+            background: var(--light-blue);
         }
         .invest-grid {
             display: grid;
@@ -1164,6 +1617,35 @@
 
 
         /* ESG Section */
+        #esg {
+            background: #27374d;
+            color: white;
+        }
+        
+        #esg .section-title {
+            color: white;
+        }
+        
+        #esg .title-word:nth-child(1),
+        #esg .title-word:nth-child(2) {
+            color: white;
+        }
+        
+        #esg .section-desc {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .vision-logo {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        .vision-logo-img {
+            max-width: 200px;
+            height: auto;
+            opacity: 1;
+        }
+        
         .esg-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1171,35 +1653,59 @@
         }
         .esg-card {
             text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
         }
+        
+        .esg-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
         .esg-card .esg-icon {
             font-size: 3rem;
-            color: var(--secondary-dark);
+            color: #3498db;
             margin-bottom: 1rem;
         }
         .esg-card h3 {
-            color: var(--primary-dark);
+            color: white;
             margin-bottom: 1rem;
+        }
+        .esg-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            font-style: italic;
         }
         .esg-card ul {
             list-style: none;
             text-align: left;
         }
         .esg-card li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             padding-left: 1.5rem;
             position: relative;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
         }
         .esg-card li::before {
             content: '✔';
             position: absolute;
             left: 0;
-            color: var(--secondary-dark);
+            color: #3498db;
+        }
+        
+        @media (max-width: 768px) {
+            .vision-logo-img {
+                max-width: 150px;
+            }
         }
 
         /* News Section */
         #news {
-            background: #f8f9fa;
+            background: var(--light-blue);
         }
         .news-grid {
             display: grid;
@@ -1270,12 +1776,12 @@
 
         /* Contact Section */
         .contact {
-            background: var(--gradient-1);
-            color: var(--text-light);
+            background: var(--light-blue);
+            color: var(--text-dark);
         }
 
         .contact .section-title {
-            color: var(--light-blue);
+            color: var(--primary-dark);
         }
 
         .contact .title-word:nth-child(2) {
@@ -1296,16 +1802,18 @@
         }
 
         .info-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.8);
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
             transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
 
         .info-card:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.95);
             transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
         }
 
         .info-card i {
@@ -1315,13 +1823,13 @@
         }
 
         .info-card h4 {
-            color: var(--light-blue);
+            color: var(--primary-dark);
             margin-bottom: 0.5rem;
         }
 
         .info-card p, .info-card a {
-            color: var(--text-light);
-            opacity: 0.9;
+            color: var(--text-dark);
+            opacity: 0.8;
             font-size: 0.95rem;
             text-decoration: none;
         }
@@ -1527,6 +2035,22 @@
                 grid-template-columns: 1fr;
             }
             
+            /* Projects Overview Responsive */
+            .projects-overview {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .projects-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .project-highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
             .gallery-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
@@ -1551,6 +2075,16 @@
             }
             .nav-dropdown:hover .nav-menu > .nav-dropdown:nth-last-child(-n+2) .mega-menu {
                 transform: translateX(0) translateY(0);
+            }
+            
+            /* Team Section Responsive */
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .team-image img {
+                height: 250px;
             }
         }
 
@@ -1632,6 +2166,68 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            /* Team Section Responsive */
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .team-image img {
+                height: 220px;
+            }
+            
+            .team-info {
+                padding: 1.5rem;
+            }
+            
+            /* Projects Overview Mobile */
+            .projects-overview {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .projects-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .project-highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stat-card {
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            /* Certifications Responsive */
+            .certifications-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .certification-card {
+                margin: 0 auto;
+                max-width: 400px;
+            }
+            
+            .certification-image {
+                height: 150px;
+                padding: 0.5rem;
+            }
+            
+            .certification-content {
+                padding: 1.5rem;
+            }
+            
+            .certifications-footer {
+                padding: 2rem;
+            }
 
         }
 
@@ -1668,13 +2264,100 @@
             .service-content {
                 padding: 1.5rem;
             }
+            
+            /* Team Section Responsive */
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .team-image img {
+                height: 200px;
+            }
+            
+            .team-info {
+                padding: 1rem;
+            }
+            
+            .team-info h3 {
+                font-size: 1.1rem;
+            }
+            
+            .team-bio {
+                font-size: 0.85rem;
+            }
+            
+            /* Projects Overview Small Mobile */
+            .projects-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stat-card {
+                padding: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 1.3rem;
+            }
+            
+            .highlight-item {
+                padding: 1rem;
+            }
+            
+            /* Certifications Small Mobile */
+            .certifications-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .certification-card {
+                max-width: 100%;
+            }
+            
+            .certification-image {
+                height: 120px;
+                padding: 0.5rem;
+            }
+            
+            .certification-content {
+                padding: 1rem;
+            }
+            
+            .certification-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .certification-content h4 {
+                font-size: 1rem;
+            }
+            
+            .certification-content p {
+                font-size: 0.9rem;
+            }
+            
+            .benefit-item {
+                font-size: 0.85rem;
+            }
+            
+            .certifications-footer {
+                padding: 1.5rem;
+            }
+            
+            .certifications-statement h3 {
+                font-size: 1.3rem;
+            }
+            
+            .certifications-statement p {
+                font-size: 0.9rem;
+            }
         } 
     </style>
 </head>
 <body>
     <div class="preloader" id="preloader">
         <div class="loader-container">
-            <img src="site-images/logo-white.png" alt="Rayyan Resources Logo" class="preloader-logo">
+            <img src="logo color 1.png" alt="Rayyan Resources Logo" class="preloader-logo">
             <div class="loader-ring"></div>
         </div>
     </div>
@@ -1682,7 +2365,7 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#home" class="nav-brand" style="text-decoration: none;">
-                <img src="site-images/logo-white.png" alt="Rayyan Resources Logo" class="navbar-logo">
+                <img src="logo color 1.png" alt="Rayyan Resources Logo" class="navbar-logo">
             </a>
             <div class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link active">Home</a>
@@ -1698,9 +2381,10 @@
                     </div>
                 </div>
                 
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#projects" class="nav-link">Projects</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
                 <a href="#why-rayyan" class="nav-link">Why Rayyan</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
 
                 <div class="nav-dropdown">
                     <a href="#invest" class="nav-link dropdown-toggle">Investors <i class="fas fa-chevron-down"></i></a>
@@ -1796,7 +2480,7 @@
             
             <div class="about-grid">
                 <div class="about-content">
-                    <img src="site-images/logo-white-blue.png" alt="Rayyan Resources" class="about-logo">
+                    <img src="logo color 2.png" alt="Rayyan Resources" class="about-logo">
                     <p class="lead-text">
                         Rayyan Resources is a next-generation mineral exploration and mining services company committed to unlocking the geological potential of Saudi Arabia and frontier markets.
                     </p>
@@ -1861,6 +2545,116 @@
                     <h3>Our Mission</h3>
                     <p>To deliver services that go beyond technical execution—by generating intellectual capital, building strong partnerships, and enabling discovery.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">Our Team</span>
+                    <span class="title-word">& Careers</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">At Rayyan Resources, our foundation is built on trusted leadership, global expertise, and an exceptional on-the-ground team.</p>
+            </div>
+
+            <div class="team-leadership">
+                <h3 class="team-section-title">Leadership & Technical Team</h3>
+                <p class="team-section-desc">Our management team brings decades of international and regional experience across exploration, operations, procurement, and finance:</p>
+                
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Nadir.jpg" alt="Nadir Elnour Ahmed Elnour" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Nadir Elnour Ahmed Elnour</h3>
+                            <p class="team-position">Chief Executive Officer</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Dileep.png" alt="Dileep Kappana" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Dileep Kappana</h3>
+                            <p class="team-position">Operations Manager</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Mohammed.png" alt="Mohammed Ameen" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Mohammed Ameen</h3>
+                            <p class="team-position">Accounts Manager</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Jackson.png" alt="Jackson Isac" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Jackson Isac</h3>
+                            <p class="team-position">Procurement Specialist</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="team/Marianne.png" alt="Marianne Joyce Bolos" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Marianne Joyce Bolos</h3>
+                            <p class="team-position">Office Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-field">
+                <h3 class="team-section-title">Our Field Team</h3>
+                <p class="team-section-desc">Our true strength lies in the field. Rayyan has a large and highly skilled field operations team consisting of geologists, geophysicists, surveyors, drill supervisors, and technicians — many of whom have years of experience working across the Arabian Shield. Their work is the engine behind every survey, sample, and successful project we deliver. With teams deployed across active sites, we ensure consistent, high-quality execution even in remote environments.</p>
+            </div>
+
+            <div class="team-careers">
+                <h3 class="team-section-title">Build Your Future in Exploration</h3>
+                <p class="team-section-desc">We're looking for passionate professionals ready to grow with a company in Saudi Arabia's exploration sector. Whether you're starting out or advancing your career, Rayyan offers hands-on experience, strong mentorship, and a collaborative, purpose-driven culture.</p>
             </div>
         </div>
     </section>
@@ -1945,28 +2739,129 @@
                     <span class="title-word">Rayyan?</span>
                 </h2>
                 <div class="title-underline"></div>
-                <p class="section-desc">We aren't just another mining services company — we are a value-building platform for modern mineral exploration.</p>
+                <p class="section-desc">We aren't just another mining services company — we're a growth engine for future-critical resources, built on science, trust, and a deep understanding of the land and its potential.</p>
             </div>
             <div class="why-rayyan-grid">
                 <div class="why-card">
                     <h3>1. Strategically Positioned</h3>
-                    <p>We operate in the Arabian Shield, one of the most underexplored yet mineral-rich regions in the world, with active licenses and JV access across gold, base metals, and critical minerals.</p>
+                    <p>Our work is rooted in the Arabian Shield — one of the world's last great mineral frontiers. With active licenses and strong JV access, we're unlocking gold, base metals, and critical minerals in one of the most promising yet underexplored terrains globally.</p>
                 </div>
                 <div class="why-card">
                     <h3>2. Technical Excellence</h3>
-                    <p>We apply advanced geological, geophysical, and drilling expertise, supported by NI 43-101 and JORC-compliant reporting, executed by experts from Canada, Sudan, France, and more.</p>
+                    <p>Our multidisciplinary team applies advanced geological, geophysical, and drilling methods, backed by NI 43-101 and JORC-compliant standards, supported by international specialists from Canada, Sudan, France, and more.</p>
                 </div>
                 <div class="why-card">
                     <h3>3. Trusted by Leaders</h3>
-                    <p>Rayyan is the technical partner behind multimillion-riyal projects, chosen by leading institutions for our transparency, reliability, and deep technical due diligence.</p>
+                    <p>From national mining companies to ambitious juniors, Rayyan is the partner of choice. We deliver results with transparency, thorough technical insight, and a strong reputation earned through execution.</p>
                 </div>
                 <div class="why-card">
                     <h3>4. Full-Cycle Services</h3>
-                    <p>From initial geological mapping and sampling to resource estimation, 3D modeling, and JV structuring, we offer complete exploration services under one roof.</p>
+                    <p>No need to coordinate between different vendors. Rayyan offers it all under one roof: mapping, sampling, geophysics, drilling, modeling, resource estimation, and JV planning. We make it easier for our clients to move faster and smarter through every phase.</p>
                 </div>
                 <div class="why-card">
-                    <h3>5. Built for Valuation</h3>
-                    <p>Our strategy focuses on long-term value through proprietary data, scalable systems, and building investor trust, not just on short-term revenue.</p>
+                    <h3>5. Built for Long-Term Value</h3>
+                    <p>Our focus isn't just hitting the next milestone. We help our clients grow the long-term value of their projects through proprietary data, repeatable systems, and credibility with investors.</p>
+                </div>
+                <div class="why-card">
+                    <h3>6. People & Responsibility</h3>
+                    <p>Behind every survey and drill rig is a team that cares. We combine local knowledge with global standards, ensuring community respect, environmental awareness, and a shared vision for responsible growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="certifications section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-word">ISO</span>
+                    <span class="title-word">Certifications</span>
+                </h2>
+                <div class="title-underline"></div>
+                <p class="section-desc">Our commitment to excellence is validated by internationally recognized ISO certifications, ensuring quality, environmental responsibility, and workplace safety in all our operations.</p>
+            </div>
+
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="site-images/iso-quality-management.png" alt="ISO Quality Management System Certification" loading="lazy">
+                    </div>
+                    <div class="certification-content">
+                        <h3>ISO 9001:2015</h3>
+                        <h4>Quality Management System</h4>
+                        <p>Demonstrates our commitment to delivering consistent, high-quality services that meet customer and regulatory requirements through systematic quality management processes.</p>
+                        <div class="certification-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Consistent Service Quality</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Customer Satisfaction</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Continuous Improvement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="site-images/iso-environmental-management.png" alt="ISO Environmental Management System Certification" loading="lazy">
+                    </div>
+                    <div class="certification-content">
+                        <h3>ISO 14001:2015</h3>
+                        <h4>Environmental Management System</h4>
+                        <p>Validates our dedication to environmental stewardship through systematic management of environmental impacts and sustainable exploration practices.</p>
+                        <div class="certification-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>Environmental Protection</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>Waste Reduction</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>Sustainable Operations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="site-images/iso-health-safety.png" alt="ISO Occupational Health and Safety Management System Certification" loading="lazy">
+                    </div>
+                    <div class="certification-content">
+                        <h3>ISO 45001:2018</h3>
+                        <h4>Occupational Health & Safety Management System</h4>
+                        <p>Ensures the highest standards of workplace safety and health protection for our team members, contractors, and all stakeholders involved in our operations.</p>
+                        <div class="certification-benefits">
+                            <div class="benefit-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Worker Safety</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Risk Management</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Compliance Standards</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certifications-footer">
+                <div class="certifications-statement">
+                    <h3>Our Commitment to Excellence</h3>
+                    <p>These certifications reflect our unwavering dedication to maintaining the highest standards across all aspects of our operations. They ensure that our clients receive not only technically superior services but also the assurance that every project is executed with integrity, environmental consciousness, and the utmost regard for safety.</p>
                 </div>
             </div>
         </div>
@@ -1983,48 +2878,72 @@
                 <p class="section-desc">Actively executing and managing projects in strategically significant exploration zones in Saudi Arabia.</p>
             </div>
 
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="site-images/project-umm-hadid.jpg" alt="Umm Hadid Project Site" class="project-image">
-                    <div class="project-content">
-                        <h3>Umm Hadid Project (Ag–Pb–Zn)</h3>
-                        <div class="project-meta">
-                           <span><strong>Owner:</strong> Silver Mining Company</span>
-                           <span><strong>Status:</strong> Active</span>
+            <div class="projects-overview">
+                <div class="projects-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-gem"></i>
                         </div>
-                        <p>Located in the Southern Afif Terrane, this project targets a historic resource of ~500,000 tonnes @ 343 g/t Ag. Mineralization occurs in polymetallic quartz–carbonate veins.</p>
-                        <ul class="project-highlights">
-                            <li>Geological & structural mapping (34 traverses)</li>
-                            <li>Rock sampling and mineralization tracing</li>
-                            <li>Ground magnetic & IP surveys</li>
-                        </ul>
-                        <div class="project-objective">
-                           <strong>Objective:</strong> Position Umm Hadid as a JV-ready, drill-stage silver-lead-zinc asset with compelling economics.
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Active Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Geological Belts</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="stat-number">9</div>
+                        <div class="stat-label">License Areas</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Target Metals</div>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <img src="site-images/project-kenz-global-jv.jpg" alt="Kenz Global JV Projects" class="project-image">
-                    <div class="project-content">
-                        <h3>Kenz Global JV Projects</h3>
-                        <div class="project-meta">
-                            <span><strong>Structure:</strong> Rayyan–Kenz Strategic JV</span>
-                           <span><strong>Status:</strong> Onboarding</span>
+                
+                <div class="projects-summary">
+                    <h3>Our Portfolio</h3>
+                    <p>Our diverse project portfolio spans across the most promising geological terranes of the Arabian Shield, targeting precious and base metals through strategic partnerships and advanced exploration techniques.</p>
+                    
+                    <div class="project-highlights-grid">
+                        <div class="highlight-item">
+                            <h4>Umm Hadid Project</h4>
+                            <p>500,000 tonnes @ 343 g/t Ag resource in the Afif Terrane</p>
+                            <span class="status-badge active">Active</span>
                         </div>
-                        <p>This strategic JV covers 9 license areas across the Afif, Nuqrah, and Zalim belts, targeting Gold, Copper, and Silver. Rayyan serves as the exclusive exploration partner.</p>
-                        <ul class="project-highlights">
-                            <li>Right of first refusal (ROF) agreements</li>
-                            <li>Data compilation and target generation</li>
-                            <li>JV structuring for investor readiness</li>
-                        </ul>
-                         <div class="project-objective">
-                           <strong>Objective:</strong> Aggregate 9 high-potential licenses into a single valuation stack targeting TSX or Nomu capital markets.
+                        <div class="highlight-item">
+                            <h4>Kenz Global JV</h4>
+                            <p>9 license areas across Afif, Nuqrah, and Zalim belts</p>
+                            <span class="status-badge onboarding">Onboarding</span>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Alkhadarah Prospect</h4>
+                            <p>Grassroots gold prospect in the Afif region</p>
+                            <span class="status-badge completed">Phase 1 Complete</span>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Riyadh Province</h4>
+                            <p>99.4 km² license targeting multiple metals</p>
+                            <span class="status-badge active">Active Phase 2</span>
                         </div>
                     </div>
+                    
+                    <div class="projects-cta">
+                        <a href="projects.html" class="btn btn-primary">
+                            <span>View Detailed Projects</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-
-
             </div>
 
             <!-- Image Gallery Section -->
@@ -2046,38 +2965,17 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="site-images/gallery-drilling-operations.jpg" alt="Drilling Operations" class="gallery-image">
+                    <img src="site-images/gallery-drilling-operations.jpg" alt="Drilling" class="gallery-image">
                     <div class="gallery-overlay">
-                        <h4>Drilling Operations</h4>
+                        <h4>Drilling</h4>
                         <p>State-of-the-art drilling equipment for core sampling and resource exploration</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="site-images/service-geological-mapping.jpg" alt="Geophysical Surveys" class="gallery-image">
+                    <img src="site-images/gallery-geophysical-survey.jpg" alt="Ground magnetic and IP surveys for subsurface mapping" class="gallery-image">
                     <div class="gallery-overlay">
-                        <h4>Geophysical Surveys</h4>
+                        <h4>Ground magnetic and IP surveys for subsurface mapping</h4>
                         <p>Ground magnetic and electromagnetic surveys for subsurface mapping</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="site-images/gallery-laboratory-analysis.webp" alt="Laboratory Analysis" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <h4>Laboratory Analysis</h4>
-                        <p>Precision geochemical analysis and mineral identification</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="site-images/gallery-3d-geological-modeling.png" alt="3D Modeling" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <h4>3D Geological Modeling</h4>
-                        <p>Advanced software for resource estimation and geological interpretation</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="site-images/service-geophysical-surveys.jpg" alt="Airborne Surveys" class="gallery-image" style="object-position: left center;">
-                    <div class="gallery-overlay">
-                        <h4>Airborne Surveys</h4>
-                        <p>Helicopter-borne geophysical surveys for regional exploration</p>
                     </div>
                 </div>
             </div>
@@ -2092,34 +2990,53 @@
                     <span class="title-word">Alliances</span>
                 </h2>
                 <div class="title-underline"></div>
-                <p class="section-desc">Our alliances are designed not just to share risk, but to multiply opportunity and accelerate value creation.</p>
+                <p class="section-desc">Our trusted partners and strategic alliances across the global mining industry.</p>
             </div>
 
-            <div class="why-rayyan-grid">
-                <div class="partner-card">
-                    <h3>Saudi Arabia</h3>
-                    <div class="partner-logos">
-                        <div class="partner-logo-item">Local License Holders</div>
-                        <div class="partner-logo-item">Regulatory Stakeholders</div>
-                        <div class="partner-logo-item">Saudi Contractors & Labs</div>
+            <div class="partners-marquee">
+                <div class="marquee-content">
+                    <div class="partner-logo">
+                        <img src="site-images/partner-1.png" alt="Partner 1" />
                     </div>
-                </div>
-
-                <div class="partner-card">
-                    <h3>Canada</h3>
-                    <div class="partner-logos">
-                        <div class="partner-logo-item">Technical Advisers</div>
-                        <div class="partner-logo-item">Financial Advisers</div>
-                        <div class="partner-logo-item">Junior Mining Firms</div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-2.webp" alt="Partner 2" />
                     </div>
-                </div>
-
-                <div class="partner-card">
-                    <h3>China</h3>
-                    <div class="partner-logos">
-                        <div class="partner-logo-item">Equipment Partners</div>
-                        <div class="partner-logo-item">Services Partnerships</div>
-                        <div class="partner-logo-item">Consortium Alliances</div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-3.png" alt="Partner 3" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-4.jpg" alt="Partner 4" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-5.jpg" alt="Partner 5" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-6.jpg" alt="Partner 6" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-7.png" alt="Partner 7" />
+                    </div>
+                    <!-- Duplicate logos for seamless loop -->
+                    <div class="partner-logo">
+                        <img src="site-images/partner-1.png" alt="Partner 1" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-2.webp" alt="Partner 2" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-3.png" alt="Partner 3" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-4.jpg" alt="Partner 4" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-5.jpg" alt="Partner 5" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-6.jpg" alt="Partner 6" />
+                    </div>
+                    <div class="partner-logo">
+                        <img src="site-images/partner-7.png" alt="Partner 7" />
                     </div>
                 </div>
             </div>
@@ -2160,14 +3077,7 @@
                             <li><strong>Strategic Partnership:</strong> Build value through technology, capital, or offtake.</li>
                         </ul>
                     </div>
-                     <div class="invest-card invest-cta">
-                        <h3>Request a Pitch Deck</h3>
-                        <p>Contact our investment team for our investor deck and data room access.</p>
-                        <a href="mailto:invest@rayyanresources.com" class="btn btn-primary btn-investor" style="margin-top: 1.5rem;">
-                            <span>Contact Investor Relations</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -2182,33 +3092,39 @@
                 </h2>
                 <div class="title-underline"></div>
                 <p class="section-desc">Exploration that respects people, planet, and policy.</p>
+                <div class="vision-logo">
+                    <img src="site-images/vision-2030-logo.png" alt="Vision 2030 Logo" class="vision-logo-img">
+                </div>
             </div>
             <div class="esg-grid">
                 <div class="esg-card">
                     <div class="esg-icon">♻️</div>
                     <h3>Environmental Stewardship</h3>
+                    <p>We are committed to protecting the environments we work in — both for today and for future generations.</p>
                     <ul>
-                        <li>Minimal surface disturbance</li>
-                        <li>Proper rehabilitation after drilling</li>
-                        <li>Drone surveys to reduce footprint</li>
+                        <li>Minimal surface disturbance: We design exploration programs that limit clearing and excavation.</li>
+                        <li>Site rehabilitation: After drilling, we restore sites to their natural state in line with regulatory standards.</li>
+                        <li>Remote and drone-based surveys: Where possible, we use drone technology to reduce the need for physical access and lower our impact.</li>
                     </ul>
                 </div>
                 <div class="esg-card">
                     <div class="esg-icon">👥</div>
                     <h3>Social Responsibility</h3>
+                    <p>We prioritize local engagement, and it strengthens every project we work on.</p>
                      <ul>
-                        <li>Prioritize local hiring and training</li>
-                        <li>Partner with Saudi SMEs</li>
-                        <li>Respect communities and heritage</li>
+                        <li>Hiring and training local talent: We invest in building local technical capacity wherever we operate.</li>
+                        <li>Partnering with Saudi SMEs: Our supply chain supports national companies, fostering local economic growth.</li>
+                        <li>Community awareness and respect: We approach every site with cultural sensitivity and open communication.</li>
                     </ul>
                 </div>
                 <div class="esg-card">
                     <div class="esg-icon">📋</div>
                     <h3>Governance & Compliance</h3>
+                    <p>Transparency, integrity, and alignment with national goals guide our operations.</p>
                      <ul>
-                        <li>Follow Saudi Mining Law</li>
-                        <li>Align with Vision 2030 goals</li>
-                        <li>Report in compliance with JORC/NI 43-101</li>
+                        <li>Full compliance with Saudi Mining Law and environmental regulations.</li>
+                        <li>Alignment with Vision 2030: Supporting localization, sustainability, and private-sector leadership in mining.</li>
+                        <li>Reporting standards: Our technical reports follow international frameworks, including JORC and NI 43-101, ensuring accountability and investor confidence.</li>
                     </ul>
                 </div>
             </div>
@@ -2250,49 +3166,7 @@
         </div>
     </section>
     
-    <section id="team" class="team section">
-         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="title-word">Our Team &</span>
-                    <span class="title-word">Careers</span>
-                </h2>
-                <div class="title-underline"></div>
-                <p class="section-desc">Our team is built on the strength of committed leadership and globally experienced technical staff.</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-card">
-                    <h4>[Full Name]</h4>
-                    <p>Founder, CEO & President</p>
-                    <p class="summary">[Brief summary of leadership role, vision, and experience]</p>
-                </div>
-                 <div class="team-card">
-                    <h4>[Full Name]</h4>
-                    <p>Co-Founder / Business Development</p>
-                    <p class="summary">[Strategic partnerships, commercial growth, client engagement]</p>
-                </div>
-                <div class="team-card">
-                    <h4>[Full Name]</h4>
-                    <p>Exploration Manager</p>
-                    <p class="summary">[Geological mapping, mineral targeting, resource modeling]</p>
-                </div>
-                <div class="team-card">
-                    <h4>[Full Name]</h4>
-                    <p>Geophysics Lead</p>
-                    <p class="summary">[IP, magnetics, drone surveys, data interpretation]</p>
-                </div>
-            </div>
-            <div id="careers" class="careers-cta">
-                 <h3>Build Your Future in Exploration</h3>
-                 <p>We're looking for driven geologists, field technicians, and project leaders. We offer career development, opportunities on real projects, and a diverse, purpose-driven team culture.</p>
-                 <p><strong>Current Openings:</strong> Exploration Geologists, GIS Analyst, Project Coordinator, Core Logging Technicians.</p>
-                 <a href="mailto:careers@rayyanresources.com" class="btn btn-primary">
-                    <span>Send your CV</span>
-                    <i class="fas fa-paper-plane"></i>
-                </a>
-            </div>
-         </div>
-    </section>
+
 
     <section id="contact" class="contact section">
         <div class="container">
@@ -2335,7 +3209,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="site-images/logo-white.png" alt="Rayyan Resources Logo" class="footer-logo">
+                    <img src="logo color 2.png" alt="Rayyan Resources Logo" class="footer-logo">
                     <p>Unlocking value from discovery to decision. Your trusted platform for modern mineral exploration across Saudi Arabia and beyond.</p>
                     <div class="social-links">
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -2346,8 +3220,8 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
                         <li><a href="#why-rayyan">Why Rayyan</a></li>
                     </ul>
                 </div>
@@ -2509,7 +3383,7 @@
                 });
             }, observerOptions);
             
-            document.querySelectorAll('.section-header, .about-grid, .mission-vision, .services-grid > *, .why-rayyan-grid > *, .projects-grid > *, .partner-card, .invest-grid > *, .esg-grid > *, .news-grid > *, .team-grid > *, .careers-cta').forEach(el => {
+            document.querySelectorAll('.section-header, .about-grid, .mission-vision, .services-grid > *, .why-rayyan-grid > *, .certifications-grid > *, .projects-grid > *, .partner-card, .invest-grid > *, .esg-grid > *, .news-grid > *, .team-grid > *, .careers-cta').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
