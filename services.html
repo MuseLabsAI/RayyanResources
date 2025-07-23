@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Services - Rayyan Resources</title>
+    <meta name="description" content="Comprehensive exploration and mining services from geological mapping to investment readiness. Full-cycle solutions for mineral exploration projects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Variables */
+        :root {
+            --primary-dark: #27374D;
+            --secondary-dark: #526DB2;
+            --accent-blue: #9DB2BF;
+            --light-blue: #DDE6ED;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #f8f9fa;
+            --gradient-1: linear-gradient(135deg, #27374D 0%, #526DB2 100%);
+            --gradient-2: linear-gradient(135deg, #526DB2 0%, #9DB2BF 100%);
+            --gradient-3: linear-gradient(135deg, #9DB2BF 0%, #DDE6ED 100%);
+            --shadow-sm: 0 2px 10px rgba(39, 55, 77, 0.1);
+            --shadow-md: 0 5px 20px rgba(39, 55, 77, 0.15);
+            --shadow-lg: 0 10px 40px rgba(39, 55, 77, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--gradient-1);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('site-images/hero-background.png') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-content {
+            color: var(--white);
+        }
+
+        .header-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .header-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--light-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--white);
+            transform: translateX(-5px);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-2);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 2.5rem;
+        }
+
+        /* Service cards without images */
+        .service-card:not(:has(.service-image)) .service-content {
+            padding-top: 3rem;
+        }
+
+        .service-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .service-description {
+            color: var(--text-dark);
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list li {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-dark);
+            font-weight: bold;
+        }
+
+        .service-highlight {
+            background: var(--gradient-3);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary-dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .highlight-emoji {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-text {
+            color: var(--text-dark);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            height: 40px;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-card {
+                margin: 0 10px;
+            }
+
+            .service-content {
+                padding: 2rem;
+            }
+
+            .service-image {
+                height: 180px;
+            }
+
+            .service-title {
+                font-size: 1.3rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                gap: 1.5rem;
+            }
+
+            .service-content {
+                padding: 1.5rem;
+            }
+
+            .service-image {
+                height: 160px;
+            }
+
+            .service-title {
+                font-size: 1.2rem;
+            }
+
+            .service-highlight {
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+                <h1 class="header-title">Integrated Services</h1>
+                <p class="header-subtitle">At Rayyan Resources, we understand that exploration isn't just about collecting data — it's about making the right decisions at the right time, backed by quality, precision, and people you can trust. We provide a full range of exploration and support services that guide your project from early-stage discovery to investment readiness. Whether you're mapping a new target or preparing for a joint venture, we're here to move with you — efficiently, transparently, and with care.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Geological Services -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="site-images/service-geological-services.jpg" alt="Geological Services" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 class="service-title">Geological Services</h3>
+                            <p class="service-description">Solid projects start with strong geological understanding. Our team conducts detailed, field-based studies to define targets and build the foundation for confident next steps.</p>
+                        </div>
+                    
+                    <ul class="service-list">
+                        <li>Regional and detailed geological mapping</li>
+                        <li>Structural, lithological, and alteration mapping</li>
+                        <li>Target generation using QGIS and QField platforms</li>
+                        <li>Exploration reporting</li>
+                    </ul>
+
+                        <div class="service-highlight">
+                            <span class="highlight-emoji">📌</span>
+                            <p class="highlight-text">Delivered by experienced geologists who know the terrain and work closely with your team to ensure alignment from day one.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remote Sensing & GIS -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="site-images/service-remote-sensing.jpeg" alt="Remote Sensing & GIS" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 class="service-title">Remote Sensing & GIS</h3>
+                            <p class="service-description">For early-stage targeting and terrain assessment, we use the latest in satellite data and GIS tools to see what others might miss.</p>
+                        </div>
+                    
+                    <ul class="service-list">
+                        <li>Satellite imagery interpretation (ASTER, Sentinel)</li>
+                        <li>Landform, vegetation, and lithology analysis</li>
+                        <li>3D terrain modeling for access and risk planning</li>
+                        <li>GIS mapping and spatial analysis</li>
+                    </ul>
+
+                        <div class="service-highlight">
+                            <span class="highlight-emoji">📌</span>
+                            <p class="highlight-text">We combine tech with local understanding to reduce risk and increase targeting accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geophysical Surveys -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="site-images/service-geophysical-surveys.jpg" alt="Geophysical Surveys" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 class="service-title">Geophysical Surveys</h3>
+                            <p class="service-description">When you need a clear picture below the surface, our geophysics team delivers high-quality data — fast, accurate, and ready for decision-making.</p>
+                        </div>
+                    
+                    <ul class="service-list">
+                        <li>Ground magnetic, IP/Resistivity, and VLF surveys</li>
+                        <li>Gravity and radiometric surveys</li>
+                        <li>Borehole logging</li>
+                        <li>Full data acquisition, processing, and interpretation</li>
+                    </ul>
+
+                        <div class="service-highlight">
+                            <span class="highlight-emoji">📌</span>
+                            <p class="highlight-text">Our surveys are tailored to your geology, budget, and timelines — with interpretation you can act on.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drilling & Core Management -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="site-images/service-drilling-core.jpg" alt="Drilling & Core Management" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 class="service-title">Drilling & Core Management</h3>
+                            <p class="service-description">We don't just supervise drilling — we help maximize its value. Our team ensures the right setup, careful execution, and professional handling of your core from rig to report.</p>
+                        </div>
+                    
+                    <ul class="service-list">
+                        <li>RC, Diamond, Air Core and drilling supervision</li>
+                        <li>Drill planning and coordination</li>
+                        <li>Core logging, photography, cutting, and storage</li>
+                        <li>QA/QC protocols and partner management</li>
+                    </ul>
+
+                        <div class="service-highlight">
+                            <span class="highlight-emoji">📌</span>
+                            <p class="highlight-text">On every site, we're focused on safety, recovery, and making every meter count.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geochemical Sampling & Assay -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="site-images/service-geochemical-sampling.jpeg" alt="Geochemical Sampling & Assay" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 class="service-title">Geochemical Sampling & Assay</h3>
+                            <p class="service-description">Trustworthy results start with consistent sampling and clean data. We manage the full process — from field to lab — with the standards investors expect.</p>
+                        </div>
+                    
+                    <ul class="service-list">
+                        <li>Rock chip, soil, and sediment sampling</li>
+                        <li>Sample tracking and chain-of-custody</li>
+                        <li>Lab coordination with accredited partners</li>
+                        <li>Geochemical analysis and reporting</li>
+                    </ul>
+
+                        <div class="service-highlight">
+                            <span class="highlight-emoji">📌</span>
+                            <p class="highlight-text">Our teams are trained to follow international best practices, ensuring reliable and reproducible results.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Modeling & Estimation -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="site-images/service-resource-modeling.jpg" alt="Resource Modeling & Estimation" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3 class="service-title">Resource Modeling & Estimation</h3>
+                            <p class="service-description">We help transform your data into value. Our models are prepared to international standards and ready for technical review, investment, or next-stage planning.</p>
+                        </div>
+                    
+                    <ul class="service-list">
+                        <li>Geological and grade modeling</li>
+                        <li>3D block modeling and variography</li>
+                        <li>Resource estimation (Inferred to Measured)</li>
+                        <li>JORC / NI 43-101 compliant reporting</li>
+                        <li>Leapfrog and Surpac-based outputs</li>
+                    </ul>
+
+                        <div class="service-highlight">
+                            <span class="highlight-emoji">📌</span>
+                            <p class="highlight-text">Clear, defendable models that reflect the real potential of your project.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="site-images/logo-white.png" alt="Rayyan Resources" class="footer-logo">
+                <p class="footer-text">&copy; 2025 Rayyan Resources. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
